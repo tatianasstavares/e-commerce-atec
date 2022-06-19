@@ -1,3 +1,5 @@
+const STORE_KEY = "@kirei"
+
 const store = {
     cart: {
         items: [],
@@ -7,6 +9,30 @@ const store = {
     products: []
 }
 
+function saveStoreToLocalStorage(store) {
+    localStorage.setItem(STORE_KEY, JSON.stringify(store))
+}
+
+function getStoreFromLocalStorage() {
+    const storeFromLocalStore = localStorage.getItem(STORE_KEY)
+
+    return Boolean(storeFromLocalStore) ? JSON.parse(storeFromLocalStore) : null
+
+}
+
+function saveInitialProductsToStore(items) {
+    items.forEach(item => store.products.push(item));
+    saveStoreToLocalStorage(store)
+}
+
+function manipulateStore(newStore) {
+    store.products = newStore.products
+    store.cart = newStore.cart
+}
+
 export {
-    store
+    store,
+    saveInitialProductsToStore,
+    getStoreFromLocalStorage,
+    manipulateStore
 }
