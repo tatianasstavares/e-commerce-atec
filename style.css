@@ -50,3 +50,44 @@ nav a {
   list-style: none;
   justify-content: space-between;
 }
+
+
+@media only screen and (min-width: 600px) {
+  .welcome-message {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  nav {
+    padding: 0 14px 0;
+  }
+
+  nav a {
+    font-size: 20px;
+  }
+
+  .container-icons img {
+    width: 24px;
+  }
+}
+
+
+@media only screen and (min-width: 768px) {
+  .welcome-message {
+    font-size: 18px;
+  }
+
+  nav {
+    padding: 0 18px 0;
+  }
+
+  nav a {
+    font-size: 24px;
+  }
+
+  .container-icons img {
+    width: 26px;
+    gap: 24px;
+  }
+
+}
