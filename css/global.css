@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Roboto:wght@300&display=swap');
+
+:root {
+    --black: #000000;
+    --blue: #007BFF;
+    --white: #ffffff;
+    --font-family-logo-messages: 'Dancing Script', cursive;
+    --font-family-text: 'Roboto', sans-serif;
+    ;
+}
