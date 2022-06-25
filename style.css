@@ -95,10 +95,11 @@ nav a {
 
 /* -------------------- Footer ------------------------ */
 
-footer {
+.container {
   font-family: var(--font-family-logo-messages);
   display: flex;
   justify-content: center;
+  flex-direction: column;
   background-color: rgba(0, 0, 0, 0.068);
   padding: 16px;
   position: absolute;
