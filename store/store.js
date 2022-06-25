@@ -17,7 +17,6 @@ function getStoreFromLocalStorage() {
     const storeFromLocalStore = localStorage.getItem(STORE_KEY)
 
     return Boolean(storeFromLocalStore) ? JSON.parse(storeFromLocalStore) : null
-
 }
 
 function saveInitialProductsToStore(items) {
