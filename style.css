@@ -92,3 +92,52 @@ nav a {
   }
 
 }
+
+/* -------------------- Footer ------------------------ */
+
+footer {
+  font-family: var(--font-family-logo-messages);
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.068);
+  padding: 16px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-top: 10px
+}
+
+footer ul {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+li {
+  list-style: none;
+
+}
+
+li img {
+  width: 20px;
+}
+
+footer p {
+  font-size: 20px;
+}
+
+.description {
+  text-align: center;
+  text-decoration: none;
+}
+
+.description span {
+  font-size: 18px;
+}
+
+.description a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: bold;
+}
