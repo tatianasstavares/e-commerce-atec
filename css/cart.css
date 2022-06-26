@@ -1,0 +1,78 @@
+body {
+    font-family: var(--font-family-text);
+}
+
+.container-coupon {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-coupon p {
+    font-size: 0.8rem;
+}
+
+
+.container-coupon input {
+    border-color: rgba(128, 128, 128, 0.301);
+    width: 240px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 50px;
+}
+
+.container-products {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container-products img {
+    width: 60px;
+}
+
+.container-info p {
+    font-size: 0.8rem;
+}
+
+.container-info span {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.span-img img {
+    background-color: red;
+}
+
+.container-amount-products {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 20px 40px;
+
+}
+
+.container-amount-products button {
+    width: 30px;
+    border: 0.3px solid rgba(128, 128, 128, 0.301);
+    background-color: var(--white);
+    color: gray;
+    border-radius: 0.1rem;
+    height: 28px;
+}
+
+.container-amount-products span {
+    font-size: small;
+}
+
+.container-amount-products button.button-trash:last-child {
+    margin-left: 14px;
+}
+
+hr {
+    width: 60%;
+    border-color: rgba(128, 128, 128, 0.171);
+}
