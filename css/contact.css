@@ -1,0 +1,254 @@
+
+/*------Cart-------*/
+.image{
+    position:relative;
+    text-align: center;
+    color: black;
+}
+.image>img{
+    width:100%;
+}
+.image>.maintext{
+    position: absolute;
+    font-size: 30px;
+  top: 30%;
+  right: 10%;
+  font-family: var(--font-family-logo-messages);
+
+}
+.image>.secondtext{
+position: absolute;
+font-size: 25px;
+  top: 50%;
+  right: 20%;
+  font-family: var(--font-family-logo-messages);
+
+}
+body{
+    font-family: var(--font-family-text);
+}
+form>input[type=text] {
+    padding: 20px;
+
+    text-align:start;
+  }
+  form>input[type=textarea] {
+    padding: 20px;
+     text-align:start;
+   }
+h1{
+    padding: 16px;
+    font-size: 20px;
+    text-align: center;
+  }
+  .container-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+  }
+  
+  .container-form>form>input{
+    margin: 10px;
+      
+    width:90%;
+    height: 30px;
+    
+  }
+  iframe{
+    width: 350px ;
+  height: 350px;
+  }
+  
+ 
+
+    .u-section-1 .u-sheet-1 {
+      min-height: 598px;
+    }
+  
+    .u-section-1 .u-image-1 {
+      min-height: 438px;
+    }
+  
+    .u-section-1 .u-image-2 {
+      min-height: 438px;
+    }
+  
+    .u-section-1 .u-image-3 {
+      min-height: 438px;
+    }
+  
+    .u-section-1 .u-image-4 {
+      min-height: 438px;
+    }
+    
+  .u-section-2 {
+    background-image: none;
+  }
+  
+  .u-section-2 .u-sheet-1 {
+    min-height: 702px;
+  }
+  
+  .u-section-2 .u-text-1 {
+    margin: 60px auto 0;
+  }
+  
+  .u-section-2 .u-text-2 {
+    display:  flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px auto 0;
+  }
+  
+  .u-section-2 .u-list-1 {
+    grid-template-rows: auto;
+    margin-top: 31px;
+    margin-bottom: 60px;
+    height: auto;
+  }
+  
+  .u-section-2 .u-repeater-1 {
+    grid-template-columns: calc(33.3333% - 6.66667px) calc(33.3333% - 6.66667px) calc(33.3333% - 6.66667px);
+    grid-gap: 10px 10px;
+    min-height: 467px;
+  }
+  
+  .u-section-2 .u-container-layout-1  {
+    padding: 30px;
+   
+  }
+    .u-section-2 .u-container-layout-2 {
+    padding: 30px;
+    
+  }
+
+  .u-section-2 .u-image-1 {
+    width: 111px;
+    height: 111px;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJ3b21hbiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI1NiAyNTYiIHN0eWxlPSJ3aWR0aDogMjU2cHg7IGhlaWdodDogMjU2cHg7Ij4KPHJlY3QgZmlsbD0iI0M2RDhFMSIgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiLz4KPHBhdGggZmlsbD0iIzdGOTZBNiIgZD0iTTE1MC41LDE2MC4xTDE1MC41LDE2MC4xVjE1MmMwLDAsMjUuNCwwLjgsMzcuNC0xMS41YzAsMC0xNy41LTQuOS0xNC40LTM2LjljMy4xLTMxLjktMy45LTU5LjktMjkuNi01Ny41CgljMCwwLTExLjEtMTMuNC0zMy4yLTQuOWMtNy42LDIuOS0yOCwxMC4yLTI2LjksNTQuNGMxLDQ0LjItMTUuNyw0NC41LTE1LjcsNDQuNXM4LjYsMTIuNiwzNy45LDEyLjN2OC4ybDIyLjMsNjVsMjIuMi02NC45CglMMTUwLjUsMTYwLjF6Ii8+CjxwYXRoIGZpbGw9IiM3Rjk2QTYiIGQ9Ik0yMTAsMjU2bC00LjUtNTQuMmMtMS41LTgtNi42LTE0LjktMTMuOS0xOC41bC0yOC0xMy44Yy0xLjYtMC44LTMuMi0xLjctNC44LTIuNmw4LjgsMjYuMWwtMTIuNC0wLjkKCUwxMjgsMjI1LjZMMTAwLjcsMTkyTDg4LjQsMTkzbDktMjYuMWwtNS42LDIuOWwtMjcuNCwxMy41Yy03LjMsMy42LTEyLjUsMTAuNS0xMy45LDE4LjVMNDYsMjU2SDIxMHoiLz4KPC9zdmc+");
+    background-position: 50% 50%;
+    margin: auto;
+  }
+  
+  .u-section-2 .u-text-3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .u-section-2 .u-text-6 {
+    
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .u-section-2 .u-text-5 {
+    width: 50px;
+    margin: 20px auto 0;
+  }
+  
+
+  
+  .u-section-2 .u-image-2 {
+    width: 111px;
+    height: 111px;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJ3b21hbiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI1NiAyNTYiIHN0eWxlPSJ3aWR0aDogMjU2cHg7IGhlaWdodDogMjU2cHg7Ij4KPHJlY3QgZmlsbD0iI0M2RDhFMSIgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiLz4KPHBhdGggZmlsbD0iIzdGOTZBNiIgZD0iTTE1MC41LDE2MC4xTDE1MC41LDE2MC4xVjE1MmMwLDAsMjUuNCwwLjgsMzcuNC0xMS41YzAsMC0xNy41LTQuOS0xNC40LTM2LjljMy4xLTMxLjktMy45LTU5LjktMjkuNi01Ny41CgljMCwwLTExLjEtMTMuNC0zMy4yLTQuOWMtNy42LDIuOS0yOCwxMC4yLTI2LjksNTQuNGMxLDQ0LjItMTUuNyw0NC41LTE1LjcsNDQuNXM4LjYsMTIuNiwzNy45LDEyLjN2OC4ybDIyLjMsNjVsMjIuMi02NC45CglMMTUwLjUsMTYwLjF6Ii8+CjxwYXRoIGZpbGw9IiM3Rjk2QTYiIGQ9Ik0yMTAsMjU2bC00LjUtNTQuMmMtMS41LTgtNi42LTE0LjktMTMuOS0xOC41bC0yOC0xMy44Yy0xLjYtMC44LTMuMi0xLjctNC44LTIuNmw4LjgsMjYuMWwtMTIuNC0wLjkKCUwxMjgsMjI1LjZMMTAwLjcsMTkyTDg4LjQsMTkzbDktMjYuMWwtNS42LDIuOWwtMjcuNCwxMy41Yy03LjMsMy42LTEyLjUsMTAuNS0xMy45LDE4LjVMNDYsMjU2SDIxMHoiLz4KPC9zdmc+");
+    background-position: 50% 50%;
+    margin: auto;
+  }
+  .br-50{
+      border-radius: 50%;
+  }
+  .title {
+    width: 80px;
+    margin: 20px auto 0;
+  }
+  .subtitle {
+    display: flex;
+    align-self: center;
+    
+    margin: 20px auto 0;
+  }
+  
+  .h1{
+    background-color: cadetblue;
+    padding: 8px;
+  }
+  .h1>h1{
+    color: aliceblue;
+  }
+  @media only screen and (min-width: 768px) {
+    .image>.maintext{
+   
+      font-size: 60px;
+  }
+  .image>.secondtext{
+ 
+  font-size: 55px;
+  
+  
+  }
+    .u-repeater {
+      display:  flex;
+      flex-direction: row;
+  }
+  .u-container-layout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+    .u-section-2 .u-container-layout-1  {
+      padding: 30px;
+      width: 900px;
+    }
+      .u-section-2 .u-container-layout-2 {
+      padding: 30px;
+      width: 900px;
+    }
+    .u-text-3 ,.u-text-6{
+      display: flex;
+    
+      justify-content: center;
+      width: 500px;
+     
+    }
+    h1{
+        text-align: center;
+        font-size: 30px;
+    }
+    .container-form{
+        flex-direction: row;
+        justify-content: center;
+    }
+  
+    form>input[type=text] {
+        padding: 10px;
+        height: 50px;
+        text-align:start;
+      }
+      form>input[type=textarea] {
+       padding: 10px;
+        height: 80px;
+        text-align:start;
+       
+      }
+      
+      form>input[type=submit] {
+        padding: 10px;
+        height: 50px;
+        text-align:start;
+        width: 300px; 
+       
+      }
+    
+    form{
+        height: 400px;
+    }
+    iframe{
+        width: 500px ;
+      height: 400px;
+    }
+    
+  }
+  /*------Cart-------*/
