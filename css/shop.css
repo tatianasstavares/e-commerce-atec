@@ -1,0 +1,302 @@
+.search{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    justify-content: center;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.searchbar{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchbar input{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+}
+
+.searchbar img{
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.addToCar-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 0.8em 3.5em; */
+    height: 40px;
+    width: 220px;    
+
+    background-color: var(--blue);
+    color: var(--white);
+    border: 0;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+
+.grid {
+    display: grid;
+    gap: 2em;    
+    grid-template-rows: 8;     
+    grid-auto-rows: 20em;
+    padding: 0 4em;    
+}
+
+.product{
+    background-color: var(--white);
+    position: relative;
+}
+
+.white-bg-left{
+    background-color: var(--white);
+    width: 65%;
+    height: 38%;
+    position: absolute;
+    bottom: 0;
+}
+
+.white-bg-right{
+    background-color: var(--white);
+    width: 60%;
+    height: 28%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.product-title{
+    background-color: var(--white);
+    position: absolute;
+    bottom: 22%;    
+}
+
+.product-category{
+    background-color: var(--white);
+    position: absolute;
+    bottom: 14%; 
+}
+
+.product-price{
+    background-color: var(--white);
+    position: absolute;
+    bottom: 16%;
+    right: 0; 
+}
+
+.product-cart{
+    background-color: var(--white);
+    color: var(--black);
+    position: absolute;
+     bottom: 0;
+     right: 0;
+}
+
+.product-stars{
+    background-color: var(--white);
+    position: absolute;
+    bottom: 0; 
+}
+
+.product1{
+    margin-top: 0.5em;
+    /* background-color: red; */
+    background-image: url("https://pyxis.nymag.com/v1/imgs/561/6ee/d4bf813a22d60fab33e806e7e77f917a94-harmony-sofa-lede.rhorizontal.w700.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;    
+}
+
+.product2{
+    /* background-color: red; */
+    background-image: url("https://pyxis.nymag.com/v1/imgs/561/6ee/d4bf813a22d60fab33e806e7e77f917a94-harmony-sofa-lede.rhorizontal.w700.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.product3{
+    background-color: orange;
+    background-image: url("https://pyxis.nymag.com/v1/imgs/561/6ee/d4bf813a22d60fab33e806e7e77f917a94-harmony-sofa-lede.rhorizontal.w700.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.product4{
+    background-color: yellow;
+    background-image: url("https://pyxis.nymag.com/v1/imgs/561/6ee/d4bf813a22d60fab33e806e7e77f917a94-harmony-sofa-lede.rhorizontal.w700.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.product5{
+    background-color: green;
+    background-image: url("https://pyxis.nymag.com/v1/imgs/561/6ee/d4bf813a22d60fab33e806e7e77f917a94-harmony-sofa-lede.rhorizontal.w700.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.product6{
+    background-color: skyblue;
+    background-image: url("https://pyxis.nymag.com/v1/imgs/561/6ee/d4bf813a22d60fab33e806e7e77f917a94-harmony-sofa-lede.rhorizontal.w700.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.product7{
+    background-color: blue;
+    background-image: url("https://pyxis.nymag.com/v1/imgs/561/6ee/d4bf813a22d60fab33e806e7e77f917a94-harmony-sofa-lede.rhorizontal.w700.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.product8{
+    background-color: violet;
+    background-image: url("https://pyxis.nymag.com/v1/imgs/561/6ee/d4bf813a22d60fab33e806e7e77f917a94-harmony-sofa-lede.rhorizontal.w700.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+@media only screen and (min-width: 600px) {
+    .grid {        
+        grid-template-areas: 
+          "one two"
+          "three four"
+          "five six"
+          "seven eight";          
+          margin: 2em auto;
+          gap: 1em;                  
+    }
+
+    .search{
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 2em;
+    }
+
+    .searchbar{
+        /* align-items: center;
+        justify-content: flex-start; */
+    } 
+    .searchbar input{
+        /* margin-left: 2em; */
+        /* width: 50em; */
+    }
+
+    .searchbar img{
+        width: 2em;
+        height: 2em;
+    }
+
+    .product1{
+        margin-top: 0%;
+        grid-area: one;
+    }
+
+    .product2{
+        grid-area: two;
+    }
+
+    .product3{
+        grid-area: three;
+    }
+
+    .product4{
+        grid-area: four;
+    }
+
+    .product5{
+        grid-area: five;
+    }
+
+    .product6{
+        grid-area: six;
+    }
+
+    .product7{
+        grid-area: seven;
+    }
+
+    .product8{
+        grid-area: eight;
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+    .grid {        
+        grid-template-areas: 
+          "one two three four"
+          "five six seven eight";
+          max-width: 1400px;
+          margin: 2em auto;
+          gap: 2em;           
+    }
+
+    .search{
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 20em;
+    }
+
+    .searchbar{
+        align-items: center;
+        justify-content: flex-start;
+    } 
+    .searchbar input{
+        margin-left: 2em;
+        /* width: 50em; */
+    }
+
+    .searchbar img{
+        width: 2em;
+        height: 2em;
+    }
+
+    .product1{
+        margin-top: 0%;
+        grid-area: one;
+    }
+
+    .product2{
+        grid-area: two;
+    }
+
+    .product3{
+        grid-area: three;
+    }
+
+    .product4{
+        grid-area: four;
+    }
+
+    .product5{
+        grid-area: five;
+    }
+
+    .product6{
+        grid-area: six;
+    }
+
+    .product7{
+        grid-area: seven;
+    }
+
+    .product8{
+        grid-area: eight;
+    }
+}
