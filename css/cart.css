@@ -5,37 +5,78 @@ body {
 .container-coupon {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-.container-coupon p {
+.container-coupon label {
     font-size: 0.8rem;
+}
+
+.container-coupon button {
+    color: #ffff;
+    font-size: small;
+    font-weight: bold;
+    background-color: var(--blue);
+    border: none;
+    border-radius: 2px;
+    box-shadow: none;
+    cursor: pointer;
+    width: 80px;
+    height: 29px;
+    margin-right: -2px;
+}
+
+
+.container-coupon>div {
+    display: flex;
+    margin-bottom: 24px;
 }
 
 
 .container-coupon input {
+    border-width: 0.5px;
+    outline: none;
     border-color: rgba(128, 128, 128, 0.301);
-    width: 240px;
-    width: 80%;
-    margin: 0 auto;
-    padding: 10px;
-    border: none;
-    margin-bottom: 10px;
-    border-radius: 50px;
 }
 
-.container-products {
+input::placeholder {
+    padding: 8px;
+    font-size: small;
+}
+
+.container-coupon-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-coupon-info>div {
+    display: flex;
+}
+
+.current-car {
+    margin-left: 56px;
+    font-weight: bold;
+}
+
+.products-container {
+    margin-top: 40px;
+
+}
+
+.product-card {
     display: flex;
     align-items: center;
     justify-content: center;
 
 }
 
-.container-products img {
+.product-card img {
     width: 60px;
 }
 
 .container-info p {
     font-size: 0.8rem;
+    color: var(--gray);
 }
 
 .container-info span {
@@ -59,7 +100,7 @@ body {
     width: 30px;
     border: 0.3px solid rgba(128, 128, 128, 0.301);
     background-color: var(--white);
-    color: gray;
+    color: var(--gray);
     border-radius: 0.1rem;
     height: 28px;
 }

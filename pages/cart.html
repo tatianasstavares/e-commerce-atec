@@ -15,15 +15,18 @@
     <header>
     </header>
     <main>
-        <div class="container-coupon">
-            <p>Have a coupon?</p>
-            <div>
-                <input type="text">
-                <button>Apply</button>
+        <section class="container-coupon">
+            <div class="container-coupon-info">
+                <label for="coupon">Have a coupon?</label>
+                <div>
+                    <input id="coupon" type="text" placeholder="Coupon Code">
+                    <button>Apply</button>
+                </div>
             </div>
-        </div>
+        </section>
+        <p class="current-car">Current Car</p>
         <section class="products-container">
-            <div class="container-products">
+            <div class="product-card">
                 <img src="../assets/icons/product-cart.png" alt="product">
                 <div class="container-info">
                     <p>H&M Blue Textile BaackPack</p>
@@ -40,6 +43,44 @@
             </div>
             <hr>
         </section>
+        <section class="products-container">
+            <div class="product-card">
+                <img src="../assets/icons/product-cart.png" alt="product">
+                <div class="container-info">
+                    <p>H&M Blue Textile BaackPack</p>
+                    <span>$29.99</span>
+                </div>
+            </div>
+            <div class="container-amount-products">
+                <div class="container-amount">
+                    <button>-</button>
+                    <button><span>1</span></button>
+                    <button>+</button>
+                </div>
+                <button class="button-trash"><img src="../assets/icons/trash-icon.png" alt=""></button>
+            </div>
+            <hr>
+        </section>
+        <section class="products-container">
+            <div class="product-card">
+                <img src="../assets/icons/product-cart.png" alt="product">
+                <div class="container-info">
+                    <p>H&M Blue Textile BaackPack</p>
+                    <span>$29.99</span>
+                </div>
+            </div>
+            <div class="container-amount-products">
+                <div class="container-amount">
+                    <button>-</button>
+                    <button><span>1</span></button>
+                    <button>+</button>
+                </div>
+                <button class="button-trash"><img src="../assets/icons/trash-icon.png" alt=""></button>
+            </div>
+            <hr>
+        </section>
+
+
     </main>
     <footer>
     </footer>
