@@ -1,5 +1,25 @@
 
 /*------Cart-------*/
+.secondtext>span::before {
+  content: "Exclusive";
+  animation: animate infinite 8s;
+  padding-left: 10px;
+}
+
+@keyframes animate {
+
+  0% {
+      content: "Exclusive";
+  }
+
+  50% {
+      content: "Devine";
+  }
+
+  75% {
+      content: "Yourself";
+  }
+}
 .image{
     position:relative;
     text-align: center;
@@ -10,7 +30,7 @@
 }
 .image>.maintext{
     position: absolute;
-    font-size: 30px;
+    font-size: 2px;
   top: 30%;
   right: 10%;
   font-family: var(--font-family-logo-messages);
@@ -33,9 +53,30 @@ form>input[type=text] {
     text-align:start;
   }
   form>input[type=textarea] {
-    padding: 20px;
+    padding: 25px;
      text-align:start;
    }
+   form>input[type=submit] {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    
+    width: 100%;
+
+    color: #ffff;
+
+    font-size: medium;
+
+    font-weight: bold;
+
+    background-color: var(--blue);
+
+    border: none;
+
+    border-radius: 2px;
+
+    cursor: pointer;
+   }
+   
 h1{
     padding: 16px;
     font-size: 20px;
@@ -166,18 +207,25 @@ h1{
   .subtitle {
     display: flex;
     align-self: center;
+    align-items: center;
+  
     
-    margin: 20px auto 0;
   }
   
   .h1{
-    background-color: cadetblue;
+    background-color: gray;
     padding: 8px;
   }
   .h1>h1{
     color: aliceblue;
   }
-  @media only screen and (min-width: 768px) {
+  .u-container-layout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  @media only screen and (min-width: 600px) {
     .image>.maintext{
    
       font-size: 60px;
@@ -197,7 +245,83 @@ h1{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
   }
+    .u-section-2 .u-container-layout-1  {
+      padding: 30px;
+      width: 600px;
+    }
+      .u-section-2 .u-container-layout-2 {
+      padding: 30px;
+      width: 600px;
+    }
+    .u-text-3 ,.u-text-6{
+      display: flex;
+    
+      justify-content: center;
+      width: 500px;
+     
+    }
+    h1{
+        text-align: center;
+        font-size: 30px;
+    }
+    .container-form{
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
+  
+    form>input[type=text] {
+        padding: 10px;
+        height: 50px;
+        text-align:start;
+      }
+      form>input[type=textarea] {
+       padding: 10px;
+        height: 80px;
+        text-align:start;
+       
+      }
+      
+      form>input[type=submit] {
+        padding: 10px;
+        height: 50px;
+        text-align:start;
+        width: 300px; 
+       
+      }
+    
+    form{
+        height: 400px;
+    }
+    iframe{
+        width: 500px ;
+      height: 400px;
+    }
+    
+  }
+  @media only screen and (min-width: 992px) {
+    .image>.maintext{
+   
+      font-size: 60px;
+  }
+  .image>.secondtext{
+ 
+  font-size: 55px;
+  
+  
+  }
+  .subtitle {
+
+    margin-left: 0px;
+    margin: 20px auto 0;
+  }
+    .u-repeater {
+      display:  flex;
+      flex-direction: row;
+  }
+
     .u-section-2 .u-container-layout-1  {
       padding: 30px;
       width: 900px;
@@ -239,16 +363,19 @@ h1{
         height: 50px;
         text-align:start;
         width: 300px; 
-       
+        background-color: var(--blue);
       }
     
     form{
         height: 400px;
     }
     iframe{
-        width: 500px ;
+        width: 400px ;
       height: 400px;
     }
     
   }
+  /*------Cart-------*/
+
+ 
   /*------Cart-------*/
