@@ -13,8 +13,10 @@ export {contact}*/
 loadHeaderAndfooter()
 sendMessage()
 
-if(window.localStorage.getItem('name1')==''||window.localStorage.getItem('name2')==''){
-GetApiRandomUser()
+if(window.localStorage.getItem('name1')==null||window.localStorage.getItem('name2')==null){
+
+   GetApiRandomUser()
 }else{
    User(2)
+   
 }
