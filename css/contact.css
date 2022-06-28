@@ -248,24 +248,35 @@ h1{
     width: 100%;
   }
     .u-section-2 .u-container-layout-1  {
-      padding: 30px;
-      width: 600px;
-     
+     /* padding: 30px;*/
+    /*  width: 600px;*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     }
       .u-section-2 .u-container-layout-2 {
-      padding: 30px;
-      width: 600px;
+     /* padding: 30px;
+     /* width: 600px;*/
+     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     }
-    .u-text-3 ,.u-text-6{
-      display: flex;
-    
-      justify-content: center;
-      width: 500px;
+    .u-section-2 .u-text-6{
+      width: 100%;
      
     }
+    .u-section-2 .u-text-3 {
+      width:  100%;
+     
+    }
+    
+    
     h1{
         text-align: center;
         font-size: 30px;
+        margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     }
     .container-form{
         flex-direction: row;
@@ -328,11 +339,15 @@ h1{
 
     .u-section-2 .u-container-layout-1  {
       padding: 30px;
-      width: 900px;
+      padding-left: 200px;
+      padding-right: 200px;
+     /* width: 900px;*/
     }
       .u-section-2 .u-container-layout-2 {
       padding: 30px;
-      width: 900px;
+      padding-left: 200px;
+      padding-right: 200px;
+     /* width: 900px;*/
     }
     .u-text-3 ,.u-text-6{
       display: flex;
