@@ -30,7 +30,7 @@
 }
 .image>.maintext{
     position: absolute;
-    font-size: 25px;
+    font-size: 20px;
   top: 30%;
   right: 10%;
   font-family: var(--font-family-logo-messages);
@@ -228,7 +228,7 @@ h1{
   @media only screen and (min-width: 600px) {
     .image>.maintext{
    
-      font-size: 25px;
+      font-size: 20px;
   }
   .image>.secondtext{
  

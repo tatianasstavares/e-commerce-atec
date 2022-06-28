@@ -1,24 +1,28 @@
-function PostContact(){
-    
+function PostContact(Name,Company,Email,Message){
+  
+  let _data = {
+    fullname:Name,
+    email: Email,
+    message:Message,
+    company:Company
+  }    
 fetch('http://localhost:6868/contactform', {
-    Method: 'POST',
-    Headers: {
-      Accept: 'application.json',
+    method: 'POST',
+    headers: {
+     Accept: 'application.json',
       'Content-Type': 'application/json'
     },
-    Body: 
-    {
-        "fullname":"miguel",
-        "email": "mail@mail.pt",
-        "message":"texto para guardar"
-        },
-    Cache: 'default'
- 
+    
+  body: JSON.stringify(_data), 
   })
   .then(response => {
-    console.log(response.json);
-
+    return response.json();
   }) 
+  .then(data=>{
+    alert(data.message);
+  })
     }
     export {PostContact}
     
+
+
