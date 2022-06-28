@@ -1,5 +1,5 @@
 function sendMessage(){
-
+const submit =  document.querySelector('form')
 
 
 }

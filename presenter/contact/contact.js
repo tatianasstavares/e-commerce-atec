@@ -11,7 +11,7 @@ import {sendMessage} from "./sendMessage.js"
 export {contact}*/
 
 loadHeaderAndfooter()
-sendMessag()
+sendMessage()
 
 if(window.localStorage.getItem('name1')==''||window.localStorage.getItem('name2')==''){
 GetApiRandomUser()
