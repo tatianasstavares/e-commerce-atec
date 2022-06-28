@@ -30,7 +30,7 @@
 }
 .image>.maintext{
     position: absolute;
-    font-size: 2px;
+    font-size: 25px;
   top: 30%;
   right: 10%;
   font-family: var(--font-family-logo-messages);
@@ -228,11 +228,11 @@ h1{
   @media only screen and (min-width: 600px) {
     .image>.maintext{
    
-      font-size: 60px;
+      font-size: 25px;
   }
   .image>.secondtext{
  
-  font-size: 55px;
+  font-size: 25px;
   
   
   }
@@ -250,6 +250,7 @@ h1{
     .u-section-2 .u-container-layout-1  {
       padding: 30px;
       width: 600px;
+     
     }
       .u-section-2 .u-container-layout-2 {
       padding: 30px;
@@ -294,9 +295,10 @@ h1{
     
     form{
         height: 400px;
+        width: 100%;
     }
     iframe{
-        width: 500px ;
+        width: 100% ;
       height: 400px;
     }
     
@@ -304,14 +306,16 @@ h1{
   @media only screen and (min-width: 992px) {
     .image>.maintext{
    
-      font-size: 60px;
+      font-size: 5vh;
   }
   .image>.secondtext{
- 
-  font-size: 55px;
-  
-  
+  font-size: 5vh;
   }
+   
+  form{
+   
+    width: 50%;
+}
   .subtitle {
 
     margin-left: 0px;
@@ -361,9 +365,9 @@ h1{
       form>input[type=submit] {
         padding: 10px;
         height: 50px;
-        text-align:start;
+        text-align:center;
         width: 300px; 
-        background-color: var(--blue);
+       
       }
     
     form{
