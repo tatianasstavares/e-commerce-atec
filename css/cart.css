@@ -1,15 +1,37 @@
 body {
     font-family: var(--font-family-text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 60%;
 }
 
 .container-coupon {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 24px;
 }
 
 .container-coupon label {
     font-size: 0.8rem;
+}
+
+.container-coupon>div {
+    display: flex;
+    margin-bottom: 24px;
+    width: 100%;
 }
 
 .container-coupon button {
@@ -27,12 +49,24 @@ body {
     margin-right: -2px;
 }
 
-
-.container-coupon>div {
+.cart-container {
+    flex: 1;
     display: flex;
-    margin-bottom: 24px;
+    justify-content: center;
 }
 
+.divider {
+    width: 100%;
+}
+
+.payment-info {
+    padding-top: 22px;
+}
+
+hr {
+    border-color: 1px solid rgba(187, 184, 184, 0.171);
+
+}
 
 .container-coupon input {
     border-width: 0.5px;
@@ -40,6 +74,7 @@ body {
     border-color: rgba(128, 128, 128, 0.301);
     border-bottom-left-radius: 6px;
     border-top-left-radius: 6px;
+    width: 85%;
 }
 
 input::placeholder {
@@ -54,16 +89,19 @@ input::placeholder {
 
 .container-coupon-info>div {
     display: flex;
+    width: 100%;
 }
 
 .current-car {
-    margin-left: 56px;
     font-weight: bold;
 }
 
 .products-container {
     margin-top: 40px;
-
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .product-card {
@@ -74,7 +112,12 @@ input::placeholder {
 }
 
 .product-card img {
-    width: 60px;
+    width: 50px;
+    margin-right: 18px;
+}
+
+.container-info p {
+    max-width: 230px;
 }
 
 .container-info p {
@@ -115,18 +158,6 @@ input::placeholder {
 .container-amount-products button.button-trash:last-child {
     margin-left: 14px;
 }
-
-hr {
-    width: 60%;
-    border-color: rgba(128, 128, 128, 0.171);
-}
-
-/* .container-payment {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-} */
 
 .container-icons {
     display: flex;
@@ -171,7 +202,6 @@ hr {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    width: 60%;
     margin: 0 auto;
 }
 
@@ -210,4 +240,33 @@ hr {
 
 .credit-card-container>a>img {
     height: 24px;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+    .flex-container {
+        flex-direction: row;
+        padding: 10px 120px;
+        width: 100%;
+    }
+
+    .divider {
+        max-width: 97%;
+
+
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .products-container {
+        flex-direction: row;
+    }
+
+    .divider {
+        max-width: 97%;
+
+    }
+
+
 }
