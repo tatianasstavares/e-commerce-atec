@@ -81,7 +81,9 @@ main {
 
 .product-info-container {
     display: flex;
+    justify-content: space-between;
     margin-top: 12px;
+    width: 100%;
 }
 
 .product-title {
