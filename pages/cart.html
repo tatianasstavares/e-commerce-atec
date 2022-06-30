@@ -6,12 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <script defer type="module" src="../presenter/cart/cart.js"></script>
     <title>Botique Kirei | Cart</title>
 </head>
 
 <body>
     <header>
     </header>
+    <main class="flex-container">
+        <div class="cart-container">
+        </div>
+        <div class="payment-info">
+            <section class="container-coupon">
+                <div class="container-coupon-info">
+                    <label for="coupon">Have a coupon?</label>
+                    <div>
+                        <input id="coupon" type="text" placeholder="Coupon Code">
+                        <button>Apply</button>
+                    </div>
+                </div>
+            </section>
+            <section class="container-payment">
+                <div class="cart-info-value">
+                    <p>Total Price: </p>
+                    <span>$69.97</span>
+                    <p>Discount: </p>
+                    <span class="discount-value">-$10.00</span>
+                    <p>Total: </p>
+                    <span>$59.97</span>
+                </div>
+                <button>Make Purchase</button>
+                <div class="credit-card-container">
+                    <a href="">
+                        <img class="credit-card" src="../assets/icons/payment-icon.png" alt="">
+                    </a>
+                    <a href="">
+                        <img class="credit-card" src="../assets/icons/payment-paypal-icon.png" alt="">
+                    </a>
+                    <a href="">
+                        <img class="credit-card" src="../assets/icons/payment-mastercard-logo.png" alt="">
+                    </a>
+                    <a href="">
+                        <img class="credit-card" src="../assets/icons/payment-small-mastercard-icon.png" alt="">
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
 
     <footer>
     </footer>
