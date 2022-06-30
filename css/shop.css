@@ -1,396 +1,153 @@
-body{
+body {
     font-family: var(--font-family-text);
     display: flex;
     flex-direction: column;
 }
 
-main{
-    flex: 1;   
-}
-
-.search{
+main {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 5px;
-    justify-content: center;
-    gap: 0.5em;    
     align-items: center;
 }
 
-.searchbar{
+.search {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.searchbar {
     display: flex;
     flex-direction: row;
-    gap: 0.5em;
-    justify-content: center;
     align-items: center;
+    margin: 0 0 12px;
 }
 
-.searchbar input{
+.searchbar input {
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
+    margin-left: 12px;
 }
 
-.searchbar img{
+.searchbar img {
     width: 1.5em;
     height: 1.5em;
 }
 
-.addToCar-button{
+.addToCar-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding: 0.8em 3.5em; */
     height: 40px;
-    width: 220px;
-    gap: 1em;
-    margin-bottom: 1em; 
-
+    width: 225px;
     background-color: var(--blue);
     color: var(--white);
     border: 0;
     border-radius: 5px;
     text-decoration: none;
+    cursor: pointer;
 }
 
 
 .grid {
     display: grid;
-    gap: 2em;    
-    grid-template-rows: 8;     
+    gap: 2em;
+    grid-template-rows: 8;
     grid-auto-rows: 17em;
-    padding: 0 4em;    
+    padding: 0 4em;
 }
 
-.product{
-    background-color: var(--white);
-    position: relative;
+
+.product-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 346px;
+    margin: 10px 16px;
 }
 
-.white-bg-left{
-    background-color: var(--white);
-    width: 65%;
-    height: 38%;
-    position: absolute;
-    bottom: 0;
+.image-container {
+    display: flex;
+    height: 240px;
 }
 
-.white-bg-right{
-    background-color: var(--white);
-    width: 60%;
-    height: 28%;
-    position: absolute;
-    bottom: 0;
-    right: 0;
+.image-container>img {
+    object-fit: contain;
+
 }
 
-.product-title{
-    background-color: var(--white);
-    position: absolute;
-    bottom: 22%;
-    font-size: 20px; 
+.product-info-container {
+    display: flex;
+    margin-top: 12px;
 }
 
-.product-category{
-    background-color: var(--white);
-    position: absolute;
-    bottom: 14%;
+.product-title {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.product-category {
+    font-size: 12px;
     text-transform: uppercase;
-    font-size: 12px; 
 }
 
-.product-price{
-    background-color: var(--white);
-    position: absolute;
-    bottom: 16%;
-    right: 0; 
+.product-price {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
 }
 
-.product-cart{
-    background-color: var(--white);
-    color: var(--black);
-    position: absolute;
-     bottom: 0;
-     right: 0;
+.star-cart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 12px;
 }
 
-.product-stars{
-    background-color: var(--white);
-    position: absolute;
-    bottom: 0; 
+.star-container {
+    display: flex;
 }
 
-.product1{
-    margin-top: 0em;
-    /* background-color: red; */
-    background-image: url("https://pyxis.nymag.com/v1/imgs/561/6ee/d4bf813a22d60fab33e806e7e77f917a94-harmony-sofa-lede.rhorizontal.w700.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;    
-}
-
-.product2{
-    /* background-color: red; */
-    background-image: url("https://pyxis.nymag.com/v1/imgs/561/6ee/d4bf813a22d60fab33e806e7e77f917a94-harmony-sofa-lede.rhorizontal.w700.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-.product3{
-    background-color: orange;
-    background-image: url("https://pyxis.nymag.com/v1/imgs/561/6ee/d4bf813a22d60fab33e806e7e77f917a94-harmony-sofa-lede.rhorizontal.w700.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.product4{
-    background-color: yellow;
-    background-image: url("https://pyxis.nymag.com/v1/imgs/561/6ee/d4bf813a22d60fab33e806e7e77f917a94-harmony-sofa-lede.rhorizontal.w700.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.product5{
-    background-color: green;
-    background-image: url("https://pyxis.nymag.com/v1/imgs/561/6ee/d4bf813a22d60fab33e806e7e77f917a94-harmony-sofa-lede.rhorizontal.w700.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.product6{
-    background-color: skyblue;
-    background-image: url("https://pyxis.nymag.com/v1/imgs/561/6ee/d4bf813a22d60fab33e806e7e77f917a94-harmony-sofa-lede.rhorizontal.w700.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.product7{
-    background-color: blue;
-    background-image: url("https://pyxis.nymag.com/v1/imgs/561/6ee/d4bf813a22d60fab33e806e7e77f917a94-harmony-sofa-lede.rhorizontal.w700.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.product8{
-    background-color: violet;
-    background-image: url("https://pyxis.nymag.com/v1/imgs/561/6ee/d4bf813a22d60fab33e806e7e77f917a94-harmony-sofa-lede.rhorizontal.w700.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-
-
-@media only screen and (min-width: 600px) {
-    .grid {        
-        grid-template-areas: 
-          "one two"
-          "three four"
-          "five six"
-          "seven eight";          
-          margin: 2em auto;
-          gap: 1em;                  
+@media only screen and (min-width: 768px) {
+    .products-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 8px;
     }
 
-    .search{
+    .search {
         flex-direction: row;
         justify-content: space-between;
-        margin: 0 2em;
+        width: 672px;
     }
 
-    .searchbar{
-        align-items: center;
-        justify-content: flex-start;
-    } 
-
-    /* .searchbar input{
-        margin-left: 2em;
-        width: 50em;
-    } */
-
-    .searchbar img{
-        width: 2em;
-        height: 2em;
-    }
-
-    .addToCar-button{
+    .searchbar {
+        width: 100%;
         margin-bottom: 0;
     }
 
-
-    .product1{
-        margin-top: 0%;
-        grid-area: one;
-    }
-
-    .product2{
-        grid-area: two;
-    }
-
-    .product3{
-        grid-area: three;
-    }
-
-    .product4{
-        grid-area: four;
-    }
-
-    .product5{
-        grid-area: five;
-    }
-
-    .product6{
-        grid-area: six;
-    }
-
-    .product7{
-        grid-area: seven;
-    }
-
-    .product8{
-        grid-area: eight;
+    .searchbar input {
+        flex: 1;
+        margin-right: 12px;
     }
 }
 
-@media only screen and (min-width: 850px){
-    .grid {        
-        grid-template-areas: 
-          "one two three "
-          "four five six"
-          "seven eight nine";
-          max-width: 1400px;
-          margin: 2em auto;
-          gap: 2em;           
+
+@media only screen and (min-width: 992px) {
+    .products-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 8px;
     }
 
-    /* .search{
+    .search {
         flex-direction: row;
         justify-content: space-between;
-        margin: 0 20em;
-    } */
-
-    .searchbar{
-        align-items: center;
-        justify-content: flex-start;
-    } 
-    .searchbar input{
-        margin-left: 2em;
-        /* width: 50em; */
+        width: 1012px;
     }
 
-    .searchbar img{
-        width: 2em;
-        height: 2em;
-    }
-
-    .addToCar-button{
-        margin-bottom: 0;
-    }
-
-    .product1{
-        margin-top: 0%;
-        grid-area: one;
-    }
-
-    .product2{
-        grid-area: two;
-    }
-
-    .product3{
-        grid-area: three;
-    }
-
-    .product4{
-        grid-area: four;
-    }
-
-    .product5{
-        grid-area: five;
-    }
-
-    .product6{
-        grid-area: six;
-    }
-
-    .product7{
-        grid-area: seven;
-    }
-
-    .product8{
-        grid-area: eight;
-    }
-
-}
-
-
-@media only screen and (min-width: 1200px) {
-    .grid {        
-        grid-template-areas: 
-          "one two three four"
-          "five six seven eight";
-          max-width: 1400px;
-          margin: 2em auto;
-          gap: 2em;           
-    }
-
-    .search{
-        /* justify-content: space-between; */
-        margin: 0 20em;
-    }
-
-    .searchbar{
-        align-items: center;
-        justify-content: flex-start;
-    } 
-    .searchbar input{
-        margin-left: 2em;
-        /* width: 50em; */
-    }
-
-    .searchbar img{
-        width: 2em;
-        height: 2em;
-    }
-
-    .addToCar-button{
-        margin-bottom: 0;
-    }
-
-    .product1{
-        margin-top: 0%;
-        grid-area: one;
-    }
-
-    .product2{
-        grid-area: two;
-    }
-
-    .product3{
-        grid-area: three;
-    }
-
-    .product4{
-        grid-area: four;
-    }
-
-    .product5{
-        grid-area: five;
-    }
-
-    .product6{
-        grid-area: six;
-    }
-
-    .product7{
-        grid-area: seven;
-    }
-
-    .product8{
-        grid-area: eight;
-    }
 }
