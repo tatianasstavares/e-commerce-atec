@@ -29,9 +29,21 @@ function manipulateStore(newStore) {
     store.cart = newStore.cart
 }
 
+function addItemToCart(item) {
+    const newItem = {
+        ...item,
+        amount: 1
+    }
+
+    console.log(newItem);
+    store.cart.items.push(newItem)
+    saveStoreToLocalStorage(store)
+}
+
 export {
     store,
     saveInitialProductsToStore,
     getStoreFromLocalStorage,
-    manipulateStore
+    manipulateStore,
+    addItemToCart
 }

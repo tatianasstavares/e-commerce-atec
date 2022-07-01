@@ -15,11 +15,9 @@ const renderMainProductCard = (product) => {
     for (let i = 0; i < 5; i++) {
         if (i < rate) {
             rating += `<img src="/assets/icons/filled-star.png" alt="filled start">`
-
         } else {
             rating += `<img src="/assets/icons/empty-star.png" alt="filled start">`
         }
-
     }
 
     const mainProductCard = `

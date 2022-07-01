@@ -114,6 +114,10 @@ main {
     display: flex;
 }
 
+.product-cart-img-container {
+    cursor: pointer;
+}
+
 @media only screen and (min-width: 768px) {
     .products-container {
         display: grid;
