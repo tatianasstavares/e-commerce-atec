@@ -36,7 +36,7 @@ main {
     height: 1.5em;
 }
 
-.addToCar-button {
+.add-to-cart-button {
     display: flex;
     justify-content: center;
     align-items: center;
