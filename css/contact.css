@@ -28,57 +28,52 @@
 }
 /*------Cart-------*/
 .secondtext>span::before {
-  content: "";
-  animation: animate infinite 22s;
+  content: "Be Devine";
+  animation: animate infinite 15s;
   padding-left: 10px;
-  transition: width 400s;
+ 
  
 }
 
 @keyframes animate {
   
-  0% {
-      opacity: 0;
-      content: "Be Exclusive";
-   
-  }
-  10% {
-  
+ 
+  22% {
+    opacity: 0;
+    content: "Be Devine";
     
-    opacity: 1;
-    content: "Be Exclusive";
 }
-15% {
+23% {
   opacity: 0;
   content: "Be Exclusive";
+  
 }
-
-  50% {
+  33% {
       opacity: 1;
-      content: "Be Devine";
+      content: "Be Exclusive";
       
   }
   55% {
     opacity: 0;
-    content: "Be Devine";
-}
-60% {  
-  opacity: 1;
-  content: "Be Devine";
-}
-
-  75% {
-      opacity: 0;
-      content: "Be Yourself";
-  }
-  85% {
-    opacity: 1;
-    content: "Be Yourself";
+    content: "Be Exclusive"
     
 }
-95% {
+56% {
+  opacity: 0;
+  content: "Be Yourself"
+  
+}
+66% {
+  opacity: 1;
+  content: "Be Yourself";
+}
+88% {
   opacity: 0;
   content: "Be Yourself";
+}
+89% {
+  opacity: 0;
+  content: "Be Devine";
 }
 }
 .image{
