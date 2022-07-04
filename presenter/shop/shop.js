@@ -1,18 +1,22 @@
+import { init } from "../../main.js"
 import { addItemToCart, store } from "../../store/store.js"
-import { loadHeaderAndfooter } from "../../view/components/loadComponents.js"
+import { loadHeaderAndfooter, updateHeader } from "../../view/components/loadComponents.js"
 import { renderMainProductCard } from "../../view/components/shop/mainProductCard.js"
-
-loadHeaderAndfooter()
 
 const productsContainerEl = document.querySelector(".products-container")
 const searchInputEl = document.querySelector('.search-input')
 
+productsContainerEl.innerHTML = "<div></div><h1>Loading...</h1>"
+
+await init()
+
 function addToCart(product) {
     addItemToCart(product)
-    loadShopScreen(store.products)
+    updateHeader()
 }
 
 function loadShopScreen(products) {
+
     const productsList = products.map(product => renderMainProductCard(product)).join("")
     productsContainerEl.innerHTML = productsList
 
@@ -23,8 +27,6 @@ function loadShopScreen(products) {
         const cartIconContainer = productListItems[i].children[2].children[1]
         cartIconContainer.addEventListener('click', () => addToCart(products[i]))
     }
-
-
 }
 
 function searchProducts() {
