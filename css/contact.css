@@ -1,24 +1,80 @@
+/*Cart animation present*/
+.image{
+  animation:  fadeInDown 2s;
 
+}
+.container-form,.contactTitle{
+  animation:  fadeInDown 3s;
+
+}
+.u-align-center{
+  animation:  fadeInDown 4s;
+
+}
+
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    
+    /*transform: translate3d(0, -100%, 0);*/
+  }
+
+  to {
+    opacity: 1;
+   /* -webkit-transform: translate3d(0, 0, 0);*/
+   
+  }
+}
 /*------Cart-------*/
 .secondtext>span::before {
-  content: "Exclusive";
-  animation: animate infinite 8s;
+  content: "Be Devine";
+  animation: animate infinite 15s;
   padding-left: 10px;
+ 
+ 
 }
 
 @keyframes animate {
-
-  0% {
-      content: "Exclusive";
+  
+ 
+  22% {
+    opacity: 0;
+    content: "Be Devine";
+    
+}
+23% {
+  opacity: 0;
+  content: "Be Exclusive";
+  
+}
+  33% {
+      opacity: 1;
+      content: "Be Exclusive";
+      
   }
-
-  50% {
-      content: "Devine";
-  }
-
-  75% {
-      content: "Yourself";
-  }
+  55% {
+    opacity: 0;
+    content: "Be Exclusive"
+    
+}
+56% {
+  opacity: 0;
+  content: "Be Yourself"
+  
+}
+66% {
+  opacity: 1;
+  content: "Be Yourself";
+}
+88% {
+  opacity: 0;
+  content: "Be Yourself";
+}
+89% {
+  opacity: 0;
+  content: "Be Devine";
+}
 }
 .image{
     position:relative;
@@ -47,7 +103,7 @@ font-size: 25px;
 body{
     font-family: var(--font-family-text);
 }
-form>input[type=text] {
+form>input[type=text],form>input[type=email] {
     padding: 20px;
 
     text-align:start;
@@ -284,7 +340,7 @@ h1{
         justify-content: center;
     }
   
-    form>input[type=text] {
+    form>input[type=text],form>input[type=email] {
         padding: 10px;
         height: 50px;
         text-align:start;
@@ -365,7 +421,7 @@ h1{
         justify-content: center;
     }
   
-    form>input[type=text] {
+    form>input[type=text],form>input[type= email]{
         padding: 10px;
         height: 50px;
         text-align:start;

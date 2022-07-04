@@ -10,11 +10,9 @@ function GetApiRandomUser(){
        console.log(data.results);
        data.results.forEach(data => {
         number=number+1;
-        const {name,picture} = data;
-        console.log(name)
-        console.log(picture)
-        console.log(number)
-        addUser(name,picture,number);
+        const {name,picture,email} = data;
+        
+        addUser(name,picture,number,email);
        });
     }) 
     }

@@ -10,13 +10,27 @@ const renderMainProductCard = (product) => {
         },
         title,
     } = product
-
+  
     let rating = ""
+    let arr=""
+    console.log(arr)
     for (let i = 0; i < 5; i++) {
-        if (i < rate) {
+         arr = ("" + rate).split(".");
+        if (arr[1]>5) {
+            if(i<rate){
             rating += `<img src="/assets/icons/filled-star.png" alt="filled start">`
-        } else {
+         }
+         else {
             rating += `<img src="/assets/icons/empty-star.png" alt="filled start">`
+         }
+        } else {
+            if(i<arr[0]){
+                rating += `<img src="/assets/icons/filled-star.png" alt="filled start">`
+            }else{
+                rating += `<img src="/assets/icons/half-star.png" width="11" height="11"
+                alt="filled start">`
+            }
+           
         }
     }
 
