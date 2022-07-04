@@ -1,4 +1,31 @@
+/*Cart animation present*/
+.image{
+  animation:  fadeInDown 2s;
 
+}
+.container-form,.Contact{
+  animation:  fadeInDown 3s;
+
+}
+.u-align-center{
+  animation:  fadeInDown 4s;
+
+}
+
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    
+    /*transform: translate3d(0, -10%, 0);*/
+  }
+
+  to {
+    opacity: 1;
+   /* -webkit-transform: translate3d(0, 0, 0);*/
+   
+  }
+}
 /*------Cart-------*/
 .secondtext>span::before {
   content: "Exclusive";
