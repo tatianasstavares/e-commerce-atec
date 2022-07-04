@@ -9,6 +9,9 @@ form.addEventListener('submit',(e)=>{
    const Company = document.querySelector('#Company').value;
    const Email = document.querySelector('#Email').value;
    const Message = document.querySelector('#Message').value;
+   if(Name==""){
+    
+   }
    PostContact(Name,Company,Email,Message);
 })
 }
