@@ -5,6 +5,14 @@
 
 header {
   font-family: var(--font-family-logo-messages);
+  position: sticky;
+  top: 0;
+  box-shadow: 0 4px 4px -6px #222;
+  margin-bottom: 16px;
+}
+
+nav {
+  background-color: white;
 }
 
 .welcome-message {
@@ -91,6 +99,25 @@ nav a {
     gap: 24px;
   }
 
+}
+
+.amount-bag-container {
+  position: relative;
+}
+
+.amount-bag {
+  background-color: indianred;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
 }
 
 /* -------------------- Footer ------------------------ */
