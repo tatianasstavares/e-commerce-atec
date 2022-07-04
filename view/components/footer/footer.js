@@ -1,5 +1,5 @@
 
-const footer = `
+const footer = () => `
 <div class="container">
     <ul>
         <li><a href=""><img src="../assets/imgs/icon-instagram.png" alt=""></a></li>
