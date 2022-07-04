@@ -1,22 +1,13 @@
-import { loadHeaderAndfooter } from "../../view/components/loadComponents.js"
-import {GetApiRandomUser} from "../../Api/GetRandomUser.js"
+import { GetApiRandomUser } from "../../Api/GetRandomUser.js"
+import { init } from "../../main.js"
 import { User } from "./addUser.js"
-import {sendMessage} from "./sendMessage.js"
-/*function contact() {
-   loadHeaderAndfooter();
-   alert("2");
-   console.log("3");
-}
+import { sendMessage } from "./sendMessage.js"
 
-export {contact}*/
-
-loadHeaderAndfooter()
+await init()
 sendMessage()
 
-if(window.localStorage.getItem('name1')==null||window.localStorage.getItem('name2')==null){
-
+if (window.localStorage.getItem('name1') == null || window.localStorage.getItem('name2') == null) {
    GetApiRandomUser()
-}else{
+} else {
    User(2)
-   
 }
