@@ -10,14 +10,11 @@ const renderMainProductCard = (product) => {
         },
         title,
     } = product
-    console.log(rate);
-    if(rate>2.5){
-        console.log("a");
-    }
+  
     let rating = ""
     let arr=""
     console.log(arr)
-    for (let i = 0.0; i < 5.0; i++) {
+    for (let i = 0; i < 5; i++) {
          arr = ("" + rate).split(".");
         if (arr[1]>5) {
             if(i<rate){
