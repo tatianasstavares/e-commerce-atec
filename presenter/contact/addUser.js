@@ -12,7 +12,8 @@ function addUser(name,picture,number,email){
         for(let i=1;i<=number;i++){
          document.querySelector("#title"+i).textContent=window.localStorage.getItem('name'+i);
          document.querySelector("#img"+i).src=window.localStorage.getItem('img'+i);
-         document.querySelector("#description"+i).text=window.localStorage.getItem('description'+i);
+        
+         document.querySelector("#description"+i).textContent=window.localStorage.getItem('description'+i);
         }
 
       
