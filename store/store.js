@@ -1,10 +1,10 @@
 const STORE_KEY = "@kirei"
-
 const store = {
     cart: {
         items: [],
         totalPrice: 0,
-        discount: 0
+        discount: 0,
+        subTotal: 0
     },
     products: []
 }
@@ -19,6 +19,19 @@ function getStoreFromLocalStorage() {
     return Boolean(storeFromLocalStore) ? JSON.parse(storeFromLocalStore) : null
 }
 
+function updateTotalPrice() {
+    //chamar a api pra retornar o total
+}
+
+function updateSubTotalPrice() {
+    const newSubTotal = store.cart.items.reduce((a, b) => {
+
+        return a + b.amount * b.price
+    }, 0)
+
+    store.cart.subTotal = Number(newSubTotal.toFixed(2))
+}
+
 function saveInitialProductsToStore(items) {
     items.forEach(item => store.products.push(item));
     saveStoreToLocalStorage(store)
@@ -29,9 +42,40 @@ function manipulateStore(newStore) {
     store.cart = newStore.cart
 }
 
+function addItemToCart(item) {
+    const itemIndex = store.cart.items.findIndex(cartItem => cartItem.id === item.id)
+
+    if (itemIndex >= 0) {
+        store.cart.items[itemIndex].amount += 1
+    } else {
+        const newItem = {
+            ...item,
+            amount: 1
+        }
+        store.cart.items.push(newItem)
+    }
+    updateSubTotalPrice()
+    saveStoreToLocalStorage(store)
+}
+
+function removeItemFromCart(id) {
+    const newItems = store.cart.items.filter(item => item.id === id)
+    store.cart.items = newItems
+}
+
+function removeAmountFromCartItem(id) {
+    const itemIndex = store.cart.items.findIndex(cartItem => cartItem.id === id)
+    if (itemIndex && store.cart.items[itemIndex].amount > 0) {
+        store.cart.items[itemIndex] -= 1
+    }
+}
+
 export {
     store,
     saveInitialProductsToStore,
     getStoreFromLocalStorage,
-    manipulateStore
+    manipulateStore,
+    addItemToCart,
+    removeItemFromCart,
+    removeAmountFromCartItem
 }
