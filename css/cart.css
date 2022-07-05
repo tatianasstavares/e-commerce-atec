@@ -107,8 +107,7 @@ input::placeholder {
 .product-card {
     display: flex;
     align-items: center;
-    justify-content: center;
-
+    flex: 1;
 }
 
 .product-card img {
@@ -132,6 +131,20 @@ input::placeholder {
 
 .span-img img {
     background-color: red;
+}
+
+.container-amount {
+    display: flex;
+}
+
+.container-amount>div {
+    width: 30px;
+    border: 0.3px solid rgba(128, 128, 128, 0.301);
+    background-color: var(--white);
+    color: var(--gray);
+    border-radius: 0.1rem;
+    height: 28px;
+    text-align: center;
 }
 
 .container-amount-products {

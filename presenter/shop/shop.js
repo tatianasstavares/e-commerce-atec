@@ -1,6 +1,6 @@
 import { init } from "../../main.js"
 import { addItemToCart, store } from "../../store/store.js"
-import { loadHeaderAndfooter, updateHeader } from "../../view/components/loadComponents.js"
+import { updateHeader } from "../../view/components/loadComponents.js"
 import { renderMainProductCard } from "../../view/components/shop/mainProductCard.js"
 
 const productsContainerEl = document.querySelector(".products-container")

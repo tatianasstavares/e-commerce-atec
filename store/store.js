@@ -58,15 +58,17 @@ function addItemToCart(item) {
     saveStoreToLocalStorage(store)
 }
 
-function removeItemFromCart(id) {
-    const newItems = store.cart.items.filter(item => item.id === id)
+function deleteItemFromCart(cartItem) {
+    const newItems = store.cart.items.filter(item => item.id !== cartItem.id)
     store.cart.items = newItems
+    saveStoreToLocalStorage(store)
 }
 
-function removeAmountFromCartItem(id) {
-    const itemIndex = store.cart.items.findIndex(cartItem => cartItem.id === id)
-    if (itemIndex && store.cart.items[itemIndex].amount > 0) {
-        store.cart.items[itemIndex] -= 1
+function decrementAmountFromCartItem(cartItem) {
+    const itemIndex = store.cart.items.findIndex(item => item.id === cartItem.id)
+    if (itemIndex >= 0 && store.cart.items[itemIndex].amount > 1) {
+        store.cart.items[itemIndex].amount -= 1
+        saveStoreToLocalStorage(store)
     }
 }
 
@@ -76,6 +78,6 @@ export {
     getStoreFromLocalStorage,
     manipulateStore,
     addItemToCart,
-    removeItemFromCart,
-    removeAmountFromCartItem
+    deleteItemFromCart,
+    decrementAmountFromCartItem
 }

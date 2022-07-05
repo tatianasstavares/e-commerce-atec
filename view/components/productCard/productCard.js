@@ -10,12 +10,12 @@ const productCard = (product) => {
         </div>
         <div class="container-amount-products">
             <div class="container-amount">
-                <button>-</button>
-                <button><span>1</span></button>
-                <button>+</button>
+                <button class="remove-item-${product.id}">-</button>
+                <div><span class="amount-item-${product.id}">${product.amount}</span></div>
+                <button class="add-item-${product.id}">+</button>
             </div>
-            <button class="button-trash">
-                <img src="../assets/icons/trash-icon.png" alt="">
+            <button class="button-trash delete-${product.id}">
+                <img src="../assets/icons/trash-icon.png" alt="trash icon">
             </button>
         </div>
     </section>
@@ -24,9 +24,6 @@ const productCard = (product) => {
     </div>
 `
 }
-
-
-
 
 export {
     productCard
