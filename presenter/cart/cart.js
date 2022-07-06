@@ -1,6 +1,6 @@
 import { goToPayment} from "../../Api/paymentApi.js";
 import { init } from "../../main.js";
-import { addItemToCart, decrementAmountFromCartItem, deleteItemFromCart, store } from "../../store/store.js";
+import { addItemToCart, decrementAmountFromCartItem, deleteItemFromCart, updateTotalPrice, updateSubTotalPrice, store } from "../../store/store.js";
 import { updateHeader } from "../../view/components/loadComponents.js";
 import { productCard } from "../../view/components/productCard/productCard.js";
 
@@ -88,7 +88,7 @@ function loadCartSummary() {
     const subtotalPriceEl = document.querySelector('.subtotal-price')
     const discountEl = document.querySelector('.discount-value')
     const totalEl = document.querySelector('.total-price')
-    
+
     subtotalPriceEl.textContent = `$${store.cart.subTotal}`
     discountEl.textContent = `-$${store.cart.discount.toFixed(2)}`
     totalEl.textContent = `$${store.cart.totalPrice.toFixed(2)}`
