@@ -1,5 +1,7 @@
+import { goToPayment} from "../../Api/paymentApi.js";
 import { init } from "../../main.js";
-import { addItemToCart, decrementAmountFromCartItem, deleteItemFromCart, store } from "../../store/store.js";
+import { addItemToCart, decrementAmountFromCartItem, deleteItemFromCart, updateTotalPrice, updateSubTotalPrice, store } from "../../store/store.js";
+import { updateHeader } from "../../view/components/loadComponents.js";
 import { productCard } from "../../view/components/productCard/productCard.js";
 
 await init()
@@ -27,24 +29,40 @@ function updateSpanWithAmount(item) {
     if (currentItem) {
         spanEl.textContent = currentItem.amount
     }
+    loadCartSummary()
 }
 
 function increment(item) {
     addItemToCart(item)
     updateSpanWithAmount(item)
+    handleSubmit()
 }
 
 function decrement(item) {
     decrementAmountFromCartItem(item)
     updateSpanWithAmount(item)
+    handleSubmit()
 }
 
 function deleteItem(item) {
     deleteItemFromCart(item)
     createCartElement()
     loadEvents()
+    handleSubmit()
 }
 
+async function handleSubmit(e) {
+    e?.preventDefault()
+    const inputValue = store.cart.code || document.querySelector("#coupon").value
+    if (!inputValue) {
+        return
+    }
+
+    await updateTotalPrice(inputValue)
+    updateSubTotalPrice()
+
+    loadCartSummary()
+}
 
 function loadEvents() {
     if (hasProducts) {
@@ -57,6 +75,26 @@ function loadEvents() {
             deleteButtonEl.addEventListener("click", () => deleteItem(item))
         })
     }
+
+    const formEl = document.querySelector('form')
+    formEl.addEventListener('submit', handleSubmit)
+
+    const purchaseButtonEl = document.querySelector('.purchase-button')
+    purchaseButtonEl.addEventListener('click', () => goToPayment(store.cart))
+
+}
+
+function loadCartSummary() {
+    const subtotalPriceEl = document.querySelector('.subtotal-price')
+    const discountEl = document.querySelector('.discount-value')
+    const totalEl = document.querySelector('.total-price')
+
+    subtotalPriceEl.textContent = `$${store.cart.subTotal}`
+    discountEl.textContent = `-$${store.cart.discount.toFixed(2)}`
+    totalEl.textContent = `$${store.cart.totalPrice.toFixed(2)}`
+
+    updateHeader()
 }
 
 loadEvents()
+loadCartSummary()

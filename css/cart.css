@@ -87,7 +87,7 @@ input::placeholder {
     flex-direction: column;
 }
 
-.container-coupon-info>div {
+.container-coupon-info>form {
     display: flex;
     width: 100%;
 }

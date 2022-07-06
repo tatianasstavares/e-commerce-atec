@@ -1,10 +1,13 @@
+import {getDiscount} from "../Api/discountApi.js"
+
 const STORE_KEY = "@kirei"
 const store = {
     cart: {
         items: [],
         totalPrice: 0,
         discount: 0,
-        subTotal: 0
+        subTotal: 0,
+        code: null
     },
     products: []
 }
@@ -19,8 +22,19 @@ function getStoreFromLocalStorage() {
     return Boolean(storeFromLocalStore) ? JSON.parse(storeFromLocalStore) : null
 }
 
-function updateTotalPrice() {
-    //chamar a api pra retornar o total
+async function updateTotalPrice(code) {
+    const discountData = await getDiscount(code)
+    const discountValue = discountData.couponcode.discount
+
+    if (Boolean(discountValue)) {
+        store.cart.discount = (discountValue * store.cart.subTotal) / 100
+        // store.cart.totalPrice = ((100 - discountValue) * store.cart.subTotal) / 100
+        store.cart.totalPrice = store.cart.subTotal * ((100 - discountValue) / 100)
+        store.cart.code = code
+        saveStoreToLocalStorage(store)
+    } else (
+        console.log("mostra erro")
+    )
 }
 
 function updateSubTotalPrice() {
@@ -55,12 +69,15 @@ function addItemToCart(item) {
         store.cart.items.push(newItem)
     }
     updateSubTotalPrice()
+    updateTotalPrice(store.cart.code)
     saveStoreToLocalStorage(store)
 }
 
 function deleteItemFromCart(cartItem) {
     const newItems = store.cart.items.filter(item => item.id !== cartItem.id)
     store.cart.items = newItems
+    updateTotalPrice(store.cart.code)
+    updateSubTotalPrice()
     saveStoreToLocalStorage(store)
 }
 
@@ -79,5 +96,7 @@ export {
     manipulateStore,
     addItemToCart,
     deleteItemFromCart,
-    decrementAmountFromCartItem
+    decrementAmountFromCartItem,
+    updateTotalPrice,
+    updateSubTotalPrice
 }
