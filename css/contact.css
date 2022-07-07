@@ -1,8 +1,7 @@
 /*Cart popup*/
 button:active,
 form>input[type=submit]:active {
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+  transform: translateY(0.9px);
 }
 
 .popup {
