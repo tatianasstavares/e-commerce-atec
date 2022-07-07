@@ -1,22 +1,23 @@
 
-function addwarning(input){
+function addWarning(input){
 
  const  error = document.querySelector('#'+input+"Error");
- error.textContent= '*'+input+' is mandatory';   
+
+ error.textContent= '*'+input.charAt(0).toUpperCase() + input.slice(1)+' is mandatory';   
 
  error.style="padding: 10px; color: red"
 }  
-function removewarning(input){
+function removeWarning(input){
     
  const  error = document.querySelector('#'+input+"Error");
  error.textContent= '';   
  error.style="padding: 0px";
 } 
-function addwarningEmail(input){
+function addWarningEmail(input){
 
     const  error = document.querySelector('#'+input+"Error");
-    error.textContent=  '*'+input+' must have an @';   
+    error.textContent=  '*'+input.charAt(0).toUpperCase() + input.slice(1)+' must have an @';   
    
     error.style="padding: 10px; color: red"
    }  
-    export {removewarning,addwarning,addwarningEmail}
+    export {removeWarning,addWarning,addWarningEmail}
