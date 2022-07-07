@@ -1,10 +1,11 @@
-function PostContact(Name,Company,Email,Message){
+import { openPopup } from "../presenter/contact/openPopup.js";
+function PostContact(Name,Email,Message){
   
   let _data = {
     fullname:Name,
     email: Email,
     message:Message,
-    company:Company
+   
   }    
 fetch('http://localhost:6868/contactform', {
     method: 'POST',
@@ -19,7 +20,7 @@ fetch('http://localhost:6868/contactform', {
     return response.json();
   }) 
   .then(data=>{
-    alert(data.message);
+    openPopup(data.message);
   })
     }
     export {PostContact}
