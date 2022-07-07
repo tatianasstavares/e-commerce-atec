@@ -22,10 +22,12 @@
   <h1>Contact Us</h1>
   <div class="container-form">
     <form>
-      <input type="text" placeholder="First Name" id="Name" name="Name" required>
-      <input type="text" placeholder="Company" id="Company" name="Company" required>
-      <input type="email" placeholder="Email" id="Email" name="Email" required>
-      <input type="textarea" placeholder="Write your message here.." id="Message" name="Message" required>
+      <input type="text" placeholder="First Name" id="Name" name="Name">
+      <p><span id="NameError"></span></p>
+      <input type="text" placeholder="Email" id="Email" name="Email">
+      <p> <span id="EmailError"></span></p>
+      <input type="textarea" placeholder="Write your message here.." id="Message" name="Message">
+      <p><span id="MessageError"></span></p>
       <input type="submit" value="Send">
     </form>
     <div>

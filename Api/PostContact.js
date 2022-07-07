@@ -1,10 +1,10 @@
-function PostContact(Name,Company,Email,Message){
+function PostContact(Name,Email,Message){
   
   let _data = {
     fullname:Name,
     email: Email,
     message:Message,
-    company:Company
+   
   }    
 fetch('http://localhost:6868/contactform', {
     method: 'POST',
