@@ -231,12 +231,14 @@ form>input[type=submit] {
 }
 
 h1 {
+  
   padding: 16px;
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
 }
 
 .container-form {
+  padding-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -251,12 +253,7 @@ h1 {
   cursor: pointer;
 }
 
-h1 {
-  padding: 16px;
-  font-size: 20px;
-  text-align: center;
 
-}
 
 .container-form {
   display: flex;
@@ -396,6 +393,7 @@ iframe {
 .h1 {
   background-color: gray;
   padding: 8px;
+  border-radius: 4px;
 }
 
 .h1>h1 {
@@ -453,7 +451,6 @@ iframe {
 
   h1 {
     text-align: center;
-    font-size: 30px;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -522,14 +519,14 @@ iframe {
 
   .u-section-2 .u-container-layout-1 {
     padding: 30px;
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 130px;
+    padding-right: 130px;
   }
 
   .u-section-2 .u-container-layout-2 {
     padding: 30px;
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 130px;
+    padding-right: 130px;
   }
 
   .u-text-3,
@@ -541,7 +538,7 @@ iframe {
 
   h1 {
     text-align: center;
-    font-size: 30px;
+    padding: 6px;
   }
 
   .container-form {
