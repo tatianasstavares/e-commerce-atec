@@ -50,6 +50,10 @@ main {
     cursor: pointer;
 }
 
+.add-to-cart-button:hover{
+   background-color: rgb(0, 102, 255);
+}
+
 
 .grid {
     display: grid;
