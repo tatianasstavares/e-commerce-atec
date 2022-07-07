@@ -22,6 +22,9 @@ fetch('http://localhost:6868/contactform', {
   .then(data=>{
     openPopup(data.message);
   })
+  .catch(function(error) {
+    openPopup("Error","Red",error.message);
+})
     }
     export {postContact }
     
