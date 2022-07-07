@@ -2,9 +2,9 @@
 function addwarning(input){
 
  const  error = document.querySelector('#'+input+"Error");
- error.textContent= 'The '+input+' cant be empty';   
+ error.textContent= '*'+input+' is mandatory';   
 
- error.style="padding: 25px; color: red"
+ error.style="padding: 10px; color: red"
 }  
 function removewarning(input){
     
@@ -15,8 +15,8 @@ function removewarning(input){
 function addwarningEmail(input){
 
     const  error = document.querySelector('#'+input+"Error");
-    error.textContent= 'The '+input+' must have an @';   
+    error.textContent=  '*'+input+' must have an @';   
    
-    error.style="padding: 25px; color: red"
+    error.style="padding: 10px; color: red"
    }  
     export {removewarning,addwarning,addwarningEmail}

@@ -1,5 +1,6 @@
 import {PostContact} from "../../Api/PostContact.js"
 import {removewarning ,addwarning,addwarningEmail } from "./components/warning.js";
+
 function sendMessage(){
 
 const form =  document.querySelector('form');
@@ -27,6 +28,8 @@ form.addEventListener('submit',(e)=>{
    }
   else{
     PostContact(Name.value,Email.value,Message.value);
+    removewarning(Name.id)
+    removewarning(Email.id)
     removewarning(Message.id)
   }
    
