@@ -1,7 +1,7 @@
 import { addUser } from "../presenter/contact/addUser.js";
-function GetApiRandomUser() {
-
-    fetch('https://randomuser.me/api/?results=2')
+function getApiRandomUser() {
+    const BASE_URL ='https://randomuser.me/api/?results=2';
+    fetch(BASE_URL)
         .then(response => {
             return response.json()
         })
@@ -15,4 +15,4 @@ function GetApiRandomUser() {
             });
         })
 }
-export { GetApiRandomUser }
+export { getApiRandomUser }

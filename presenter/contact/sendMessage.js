@@ -1,5 +1,5 @@
-import {PostContact} from "../../Api/PostContact.js"
-import {removewarning ,addwarning,addwarningEmail } from "./components/warning.js";
+import {postContact} from "../../api/postContact.js"
+import {removeWarning ,addWarning,addWarningEmail } from "./components/warning.js";
 
 function sendMessage(){
 
@@ -7,30 +7,30 @@ const form =  document.querySelector('form');
 
 form.addEventListener('submit',(e)=>{
     e.preventDefault();
-   const Name = document.querySelector('#Name');
-   const Email = document.querySelector('#Email');
-   const Message = document.querySelector('#Message');
-   if(Name.value==""){
-    addwarning(Name.id)
+   const name = document.querySelector('#name');
+   const email = document.querySelector('#email');
+   const message = document.querySelector('#message');
+   if(name.value==""){
+    addWarning(name.id)
   
    }
-  else if(Email.value==""){
-    addwarning(Email.id)
-    removewarning(Name.id)
+  else if(email.value==""){
+    addWarning(email.id)
+    removeWarning(name.id)
    }
-   else if (Email.value.includes("@")==false){
-    addwarningEmail (Email.id)
+   else if (email.value.includes("@")==false){
+    addWarningEmail (email.id)
    }
-  else if( Message.value==""){
-    addwarning(Message.id)
-    removewarning(Name.id)
-    removewarning(Email.id)
+  else if( message.value==""){
+    addWarning(message.id)
+    removeWarning(name.id)
+    removeWarning(email.id)
    }
   else{
-    PostContact(Name.value,Email.value,Message.value);
-    removewarning(Name.id)
-    removewarning(Email.id)
-    removewarning(Message.id)
+    postContact(name.value,email.value,message.value);
+    removeWarning(name.id)
+    removeWarning(email.id)
+    removeWarning(message.id)
   }
    
 })

@@ -1,6 +1,6 @@
-import { GetApiRandomUser } from "../../Api/GetRandomUser.js"
+import { getApiRandomUser } from "../../api/getRandomUser.js"
 import { init } from "../../main.js"
-import { User } from "./addUser.js"
+import {  getUserFromLocalStorage } from "./addUser.js"
 import { sendMessage } from "./sendMessage.js"
 import { closePopup } from "./closePopup.js"
 
@@ -9,8 +9,8 @@ await init()
 sendMessage()
 closePopup()
 
-if (window.localStorage.getItem('name1') == null || window.localStorage.getItem('name2') == null) {
-   GetApiRandomUser()
+if (localStorage.getItem('name1') == null || localStorage.getItem('name2') == null) {
+   getApiRandomUser()
 } else {
-   User(2)
+   getUserFromLocalStorage(2)
 }

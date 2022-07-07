@@ -10,10 +10,10 @@ const renderMainProductCard = (product) => {
     } = product
 
     let rating = ""
-    let arr = ""
+    let rateArray = ""
     for (let i = 0; i < 5; i++) {
-        arr = ("" + rate).split(".");
-        if (arr[1] > 5) {
+        rateArray = (String(rate)).split(".");
+        if (rateArray[1] > 5) {
             if (i < rate) {
                 rating += `<img src="/assets/icons/filled-star.png" alt="filled start">`
             }
@@ -21,7 +21,7 @@ const renderMainProductCard = (product) => {
                 rating += `<img src="/assets/icons/empty-star.png" alt="filled start">`
             }
         } else {
-            if (i < arr[0]) {
+            if (i < rateArray[0]) {
                 rating += `<img src="/assets/icons/filled-star.png" alt="filled start">`
             } else {
                 rating += `<img src="/assets/icons/half-star.png" width="11" height="11"
