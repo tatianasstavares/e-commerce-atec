@@ -1,3 +1,12 @@
+body{
+    display: flex;
+    flex-direction: column;    
+}
+
+main{    
+    flex: 1;
+}
+
 .container-about{
     display: flex;
     flex-direction: column;
@@ -75,5 +84,31 @@ img{
 
     .description{
         font-size: 15px;
+    }
+
+    @media only screen and (min-width: 992px) {
+        .title1{
+            display: none;
+        }
+        .title2{
+            font-size: 50px;
+            margin-bottom: 10px;
+        }        
+        .container-about{
+            max-width: 1200px;                  
+        }
+
+        .img-container{
+            min-width: 500px;
+        }
+
+        .about-us{
+            font-size: 50px;
+            margin-bottom: 14px;
+        }
+
+        .description{
+            font-size: 18px;
+        }
     }
 }
