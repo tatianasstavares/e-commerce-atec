@@ -1,4 +1,10 @@
 /*Cart popup*/
+button:active,
+form>input[type=submit]:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 .popup {
   width: 400px;
   background-color: #ffff;
@@ -12,7 +18,6 @@
   color: #333;
   visibility: hidden;
   transition: transform 0.4s, top 0.4s;
-
 }
 
 .open-popup {
