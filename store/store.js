@@ -1,4 +1,4 @@
-import {getDiscount} from "../Api/discountApi.js"
+import { getDiscount } from "../Api/discountApi.js"
 
 const STORE_KEY = "@kirei"
 const store = {
@@ -24,22 +24,32 @@ function getStoreFromLocalStorage() {
 
 async function updateTotalPrice(code) {
     const discountData = await getDiscount(code)
-    const discountValue = discountData.couponcode.discount
+    const discountValue = discountData.couponcode?.discount
 
+    console.log({ discountData, discountValue });
     if (Boolean(discountValue)) {
         store.cart.discount = (discountValue * store.cart.subTotal) / 100
         // store.cart.totalPrice = ((100 - discountValue) * store.cart.subTotal) / 100
         store.cart.totalPrice = store.cart.subTotal * ((100 - discountValue) / 100)
         store.cart.code = code
         saveStoreToLocalStorage(store)
-    } else (
-        console.log("mostra erro")
-    )
+        return {
+            erro: false,
+            message: `Coupon ${code} aapplied.`
+        }
+
+    } else {
+        store.cart.totalPrice = store.cart.subTotal
+
+        return {
+            erro: true,
+            message: "Invalid coupon"
+        }
+    }
 }
 
 function updateSubTotalPrice() {
     const newSubTotal = store.cart.items.reduce((a, b) => {
-
         return a + b.amount * b.price
     }, 0)
 
@@ -85,6 +95,8 @@ function decrementAmountFromCartItem(cartItem) {
     const itemIndex = store.cart.items.findIndex(item => item.id === cartItem.id)
     if (itemIndex >= 0 && store.cart.items[itemIndex].amount > 1) {
         store.cart.items[itemIndex].amount -= 1
+        updateSubTotalPrice()
+        updateTotalPrice(store.cart.code)
         saveStoreToLocalStorage(store)
     }
 }

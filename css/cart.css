@@ -204,6 +204,14 @@ input::placeholder {
     margin-right: -2px;
 }
 
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
 .container-payment-cards {
     display: flex;
     justify-content: space-between;
