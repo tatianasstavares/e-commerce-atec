@@ -1,4 +1,4 @@
-import { goToPayment} from "../../Api/paymentApi.js";
+import { goToPayment } from "../../Api/paymentApi.js";
 import { init } from "../../main.js";
 import { addItemToCart, decrementAmountFromCartItem, deleteItemFromCart, updateTotalPrice, updateSubTotalPrice, store } from "../../store/store.js";
 import { updateHeader } from "../../view/components/loadComponents.js";
@@ -20,8 +20,6 @@ function createCartElement() {
         </div>
 `
 }
-
-createCartElement()
 
 function updateSpanWithAmount(item) {
     const spanEl = document.querySelector(`.amount-item-${item.id}`)
@@ -58,7 +56,17 @@ async function handleSubmit(e) {
         return
     }
 
-    await updateTotalPrice(inputValue)
+    const result = await updateTotalPrice(inputValue)
+    const couponMessageEl = document.querySelector(".coupon-message")
+    console.log({ result });
+    if (result.erro) {
+        couponMessageEl.classList.remove('green')
+        couponMessageEl.textContent = result.message
+        return
+    }
+    couponMessageEl.classList.remove('red')
+    couponMessageEl.textContent = result.message
+
     updateSubTotalPrice()
 
     loadCartSummary()
@@ -84,17 +92,20 @@ function loadEvents() {
 
 }
 
-function loadCartSummary() {
+async function loadCartSummary() {
     const subtotalPriceEl = document.querySelector('.subtotal-price')
     const discountEl = document.querySelector('.discount-value')
     const totalEl = document.querySelector('.total-price')
+    await updateTotalPrice()
 
     subtotalPriceEl.textContent = `$${store.cart.subTotal}`
     discountEl.textContent = `-$${store.cart.discount.toFixed(2)}`
     totalEl.textContent = `$${store.cart.totalPrice.toFixed(2)}`
 
     updateHeader()
+    updateSubTotalPrice()
 }
 
+createCartElement()
 loadEvents()
 loadCartSummary()
