@@ -1,11 +1,12 @@
 import { openPopup } from "../presenter/contact/openPopup.js";
 function postContact(name,email,message){
+  
   let _data = {
     fullname:name,
     email: email,
     message:message,
   }    
-  try{
+ 
 fetch('http://localhost:6868/contactform', {
     method: 'POST',
     headers: {
@@ -15,17 +16,19 @@ fetch('http://localhost:6868/contactform', {
     
   body: JSON.stringify(_data), 
   })
+
   .then(response => {
     return response.json();
   }) 
   .then(data=>{
     openPopup(data.message,'Success');
   })
+  .catch((error) => {
+      openPopup(error.message,'Error');
+  });
 }
-catch(err){
-  openPopup(err.message,'Error');
-}
-    }
+
+
     export {postContact }
     
 
