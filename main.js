@@ -1,4 +1,4 @@
-import { getAllProductsFromApi } from './presenter/products.js'
+import {getAllProductsFromApi} from "./api/getProducts.js"
 import { getStoreFromLocalStorage, manipulateStore, saveInitialProductsToStore, store } from './store/store.js';
 import { loadHeaderAndfooter } from './view/components/loadComponents.js';
 import './style.css'

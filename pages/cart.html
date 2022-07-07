@@ -21,22 +21,22 @@
             <section class="container-coupon">
                 <div class="container-coupon-info">
                     <label for="coupon">Have a coupon?</label>
-                    <div>
+                    <form>
                         <input id="coupon" type="text" placeholder="Coupon Code">
-                        <button>Apply</button>
-                    </div>
+                        <button type="submit">Apply</button>
+                    </form>
                 </div>
             </section>
             <section class="container-payment">
                 <div class="cart-info-value">
                     <p>Total Price: </p>
-                    <span>$69.97</span>
+                    <span class="subtotal-price">$0</span>
                     <p>Discount: </p>
-                    <span class="discount-value">-$10.00</span>
+                    <span class="discount-value">$0</span>
                     <p>Total: </p>
-                    <span>$59.97</span>
+                    <span class="total-price">$0</span>
                 </div>
-                <button>Make Purchase</button>
+                <button class="purchase-button">Make Purchase</button>
                 <div class="credit-card-container">
                     <a href="">
                         <img class="credit-card" src="../assets/icons/payment-icon.png" alt="">

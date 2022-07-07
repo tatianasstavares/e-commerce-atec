@@ -87,7 +87,7 @@ input::placeholder {
     flex-direction: column;
 }
 
-.container-coupon-info>div {
+.container-coupon-info>form {
     display: flex;
     width: 100%;
 }
@@ -243,6 +243,10 @@ input::placeholder {
     margin-bottom: 24px;
 
 }
+.container-payment button:hover {
+    background-color: rgb(0, 102, 255);
+}
+
 
 .credit-card-container {
     width: 100%;
