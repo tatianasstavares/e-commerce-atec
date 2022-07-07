@@ -43,4 +43,37 @@ img{
     max-width: 400px;
 }
 
+@media only screen and (min-width: 768px) {
+    .title1{
+        display: none;
+    }
+    .title2{
+        display: block;
+        font-size: 35px;
+        margin-bottom: 8px;
+    }
 
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-about{        
+        flex-direction: row;
+        justify-content: center;        
+    }
+
+    .img-container{
+        min-width: 400px;
+    }
+
+    .about-us{
+        font-size: 35px;
+        margin-bottom: 10px;
+    }
+
+    .description{
+        font-size: 15px;
+    }
+}
