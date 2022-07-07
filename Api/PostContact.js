@@ -5,7 +5,7 @@ function postContact(name,email,message){
     email: email,
     message:message,
   }    
-  try{
+
 fetch('http://localhost:6868/contactform', {
     method: 'POST',
     headers: {
@@ -21,10 +21,9 @@ fetch('http://localhost:6868/contactform', {
   .then(data=>{
     openPopup(data.message,'Success');
   })
-}
-catch(err){
-  openPopup(err.message,'Error');
-}
+  .catch(function(error) {
+    openPopup("Error","Red",error.message);
+})
     }
     export {postContact }
     
