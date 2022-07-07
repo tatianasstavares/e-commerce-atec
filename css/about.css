@@ -1,0 +1,46 @@
+.container-about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title1{
+    font-family: var(--font-family-logo-messages);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.title2{
+    font-family: var(--font-family-logo-messages);
+    display: none;
+}
+
+.text-about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-us{
+    font-family: var(--font-family-text);
+    font-size: 25px;
+    margin-top: 15px;        
+}
+
+
+.description{
+    font-family: var(--font-family-text);
+    padding: 1% 5%;    
+}
+
+img{
+    width: 100%;
+}
+
+.img-container{
+    max-width: 400px;
+}
+
+
