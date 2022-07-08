@@ -1,6 +1,6 @@
 import { goToPayment } from "../../Api/paymentApi.js";
 import { init } from "../../main.js";
-import { addItemToCart, decrementAmountFromCartItem, deleteItemFromCart, updateTotalPrice, updateSubTotalPrice, store } from "../../store/store.js";
+import { addItemToCart, decrementAmountFromCartItem, deleteItemFromCart, updateTotalPrice, updateSubTotalPrice, store, checkout } from "../../store/store.js";
 import { updateHeader } from "../../view/components/loadComponents.js";
 import { productCard } from "../../view/components/productCard/productCard.js";
 
@@ -23,15 +23,20 @@ function createCartElement() {
 
 function loadCounponMessage(firstLoad) {
     const couponMessageEl = document.querySelector(".coupon-message")
-    console.log(firstLoad, store);
+    const couponInputEl = document.querySelector("#coupon")
+    const submitButtonEl = document.querySelector("#submit-button")
+
     if (!store.cart.couponMessage || (firstLoad && !store.cart.code)) {
         couponMessageEl.textContent = ""
     } else {
-        couponMessageEl.textContent = ""
-        setTimeout(deleteMessage, 100);
-        function deleteMessage() {
-            couponMessageEl.textContent = store.cart.couponMessage
+        couponMessageEl.textContent = store.cart.couponMessage
 
+        if (store.cart.code) {
+            couponInputEl.disabled = true
+            couponInputEl.placeholder = store.cart.code
+            couponInputEl.style.cursor = "not-allowed";
+            submitButtonEl.disabled = true
+            submitButtonEl.style.cursor = "not-allowed";
         }
     }
 }
@@ -51,20 +56,21 @@ function updateSpanWithAmount(item) {
 function increment(item) {
     addItemToCart(item)
     updateSpanWithAmount(item)
-    handleSubmit()
+    loadCartSummary()
 }
 
 function decrement(item) {
     decrementAmountFromCartItem(item)
     updateSpanWithAmount(item)
-    handleSubmit()
+    loadCartSummary()
+
 }
 
-function deleteItem(item) {
+async function deleteItem(item) {
     deleteItemFromCart(item)
     createCartElement()
     loadEvents()
-    handleSubmit()
+    loadCartSummary()
 }
 
 async function handleSubmit(e) {
@@ -76,14 +82,15 @@ async function handleSubmit(e) {
 
     await updateTotalPrice(inputValue)
     loadCounponMessage()
-    updateSubTotalPrice()
     loadCartSummary()
 }
 
-async function checkout(cart) {
-    await goToPayment(cart)
+async function handleCheckout(cart) {
+    const result = await goToPayment(cart)
+    checkout(result.message)
     window.location = "/pages/checkout.html"
 }
+
 
 function loadEvents() {
     if (hasProducts) {
@@ -101,7 +108,7 @@ function loadEvents() {
     formEl.addEventListener('submit', handleSubmit)
 
     const purchaseButtonEl = document.querySelector('.purchase-button')
-    purchaseButtonEl.addEventListener('click', () => checkout(store.cart))
+    purchaseButtonEl.addEventListener('click', () => handleCheckout(store.cart))
 
 }
 

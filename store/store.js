@@ -9,7 +9,8 @@ const store = {
         discountValue: null,
         subTotal: 0,
         code: null,
-        couponMessage: null
+        couponMessage: null,
+        checkoutMessage: null
     },
     products: []
 }
@@ -106,6 +107,20 @@ function decrementAmountFromCartItem(cartItem) {
     }
 }
 
+function checkout(message) {
+    store.cart = {
+        items: [],
+        totalPrice: 0,
+        discount: 0,
+        discountValue: null,
+        subTotal: 0,
+        code: null,
+        couponMessage: null,
+        checkoutMessage: message
+    }
+    saveStoreToLocalStorage(store)
+}
+
 export {
     store,
     saveInitialProductsToStore,
@@ -115,5 +130,6 @@ export {
     deleteItemFromCart,
     decrementAmountFromCartItem,
     updateTotalPrice,
-    updateSubTotalPrice
+    updateSubTotalPrice,
+    checkout
 }
