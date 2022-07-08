@@ -6,8 +6,10 @@ const store = {
         items: [],
         totalPrice: 0,
         discount: 0,
+        discountValue: null,
         subTotal: 0,
-        code: null
+        code: null,
+        couponMessage: null
     },
     products: []
 }
@@ -22,30 +24,31 @@ function getStoreFromLocalStorage() {
     return Boolean(storeFromLocalStore) ? JSON.parse(storeFromLocalStore) : null
 }
 
-async function updateTotalPrice(code) {
-    const discountData = await getDiscount(code)
-    const discountValue = discountData.couponcode?.discount
+async function updateTotalPrice(code = store.cart.code) {
 
-    console.log({ discountData, discountValue });
+    if (!code) {
+        store.cart.totalPrice = store.cart.subTotal
+        saveStoreToLocalStorage(store)
+        return
+    }
+
+    const discountData = await getDiscount(code)
+    const discountValue = discountData?.couponcode?.discount
+
+
     if (Boolean(discountValue)) {
         store.cart.discount = (discountValue * store.cart.subTotal) / 100
-        // store.cart.totalPrice = ((100 - discountValue) * store.cart.subTotal) / 100
         store.cart.totalPrice = store.cart.subTotal * ((100 - discountValue) / 100)
         store.cart.code = code
-        saveStoreToLocalStorage(store)
-        return {
-            erro: false,
-            message: `Coupon ${code} aapplied.`
-        }
-
+        store.cart.discountValue = discountValue
+        store.cart.couponMessage = `Coupon ${code} applied.`
     } else {
         store.cart.totalPrice = store.cart.subTotal
+        store.cart.couponMessage = "Invalid coupon"
 
-        return {
-            erro: true,
-            message: "Invalid coupon"
-        }
     }
+
+    saveStoreToLocalStorage(store)
 }
 
 function updateSubTotalPrice() {
@@ -54,6 +57,7 @@ function updateSubTotalPrice() {
     }, 0)
 
     store.cart.subTotal = Number(newSubTotal.toFixed(2))
+    saveStoreToLocalStorage(store)
 }
 
 function saveInitialProductsToStore(items) {
@@ -64,6 +68,7 @@ function saveInitialProductsToStore(items) {
 function manipulateStore(newStore) {
     store.products = newStore.products
     store.cart = newStore.cart
+    saveStoreToLocalStorage(store)
 }
 
 function addItemToCart(item) {
@@ -79,14 +84,14 @@ function addItemToCart(item) {
         store.cart.items.push(newItem)
     }
     updateSubTotalPrice()
-    updateTotalPrice(store.cart.code)
+    updateTotalPrice()
     saveStoreToLocalStorage(store)
 }
 
 function deleteItemFromCart(cartItem) {
     const newItems = store.cart.items.filter(item => item.id !== cartItem.id)
     store.cart.items = newItems
-    updateTotalPrice(store.cart.code)
+    updateTotalPrice()
     updateSubTotalPrice()
     saveStoreToLocalStorage(store)
 }
@@ -96,7 +101,7 @@ function decrementAmountFromCartItem(cartItem) {
     if (itemIndex >= 0 && store.cart.items[itemIndex].amount > 1) {
         store.cart.items[itemIndex].amount -= 1
         updateSubTotalPrice()
-        updateTotalPrice(store.cart.code)
+        updateTotalPrice()
         saveStoreToLocalStorage(store)
     }
 }

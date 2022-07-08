@@ -21,6 +21,22 @@ function createCartElement() {
 `
 }
 
+function loadCounponMessage(firstLoad) {
+    const couponMessageEl = document.querySelector(".coupon-message")
+    console.log(firstLoad, store);
+    if (!store.cart.couponMessage || (firstLoad && !store.cart.code)) {
+        couponMessageEl.textContent = ""
+    } else {
+        couponMessageEl.textContent = ""
+        setTimeout(deleteMessage, 100);
+        function deleteMessage() {
+            couponMessageEl.textContent = store.cart.couponMessage
+
+        }
+    }
+}
+
+
 function updateSpanWithAmount(item) {
     const spanEl = document.querySelector(`.amount-item-${item.id}`)
     const currentItem = store.cart.items.find(cartItem => cartItem.id === item.id)
@@ -28,6 +44,8 @@ function updateSpanWithAmount(item) {
         spanEl.textContent = currentItem.amount
     }
     loadCartSummary()
+    updateHeader()
+    updateSubTotalPrice()
 }
 
 function increment(item) {
@@ -56,20 +74,15 @@ async function handleSubmit(e) {
         return
     }
 
-    const result = await updateTotalPrice(inputValue)
-    const couponMessageEl = document.querySelector(".coupon-message")
-    console.log({ result });
-    if (result.erro) {
-        couponMessageEl.classList.remove('green')
-        couponMessageEl.textContent = result.message
-        return
-    }
-    couponMessageEl.classList.remove('red')
-    couponMessageEl.textContent = result.message
-
+    await updateTotalPrice(inputValue)
+    loadCounponMessage()
     updateSubTotalPrice()
-
     loadCartSummary()
+}
+
+async function checkout(cart) {
+    await goToPayment(cart)
+    window.location = "/pages/checkout.html"
 }
 
 function loadEvents() {
@@ -88,14 +101,15 @@ function loadEvents() {
     formEl.addEventListener('submit', handleSubmit)
 
     const purchaseButtonEl = document.querySelector('.purchase-button')
-    purchaseButtonEl.addEventListener('click', () => goToPayment(store.cart))
+    purchaseButtonEl.addEventListener('click', () => checkout(store.cart))
 
 }
 
-async function loadCartSummary() {
+async function loadCartSummary(firstLoad) {
     const subtotalPriceEl = document.querySelector('.subtotal-price')
     const discountEl = document.querySelector('.discount-value')
     const totalEl = document.querySelector('.total-price')
+
     await updateTotalPrice()
 
     subtotalPriceEl.textContent = `$${store.cart.subTotal}`
@@ -104,8 +118,9 @@ async function loadCartSummary() {
 
     updateHeader()
     updateSubTotalPrice()
+    loadCounponMessage(firstLoad)
 }
 
 createCartElement()
 loadEvents()
-loadCartSummary()
+loadCartSummary(true)

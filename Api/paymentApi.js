@@ -14,6 +14,7 @@ async function goToPayment(cart) {
         body: JSON.stringify(requestBody),
     })
     const result = await data.json()
-    console.log({ result });
+    return result
 }
+
 export { goToPayment }
