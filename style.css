@@ -1,8 +1,172 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url(./css/reset.css);
+@import url(./css/global.css);
+
+/* -------------------- Header ------------------------ */
+
+header {
+  font-family: var(--font-family-logo-messages);
+  position: sticky;
+  top: 0;
+  box-shadow: 0 4px 4px -6px #222;
+  margin-bottom: 16px;
+  z-index: 1;
+}
+
+nav {
+  background-color: white;
+}
+
+.welcome-message {
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+
+  display: flex;
+  justify-content: center;
+
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px 0;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  padding-right: 4px;
+  cursor: pointer;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 20px;
+}
+
+.container-icons img {
+  width: 22px;
+}
+
+.container-icons {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  justify-content: space-between;
+}
+
+
+@media only screen and (min-width: 600px) {
+  .welcome-message {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  nav {
+    padding: 0 14px 0;
+  }
+
+  nav a {
+    font-size: 20px;
+  }
+
+  .container-icons img {
+    width: 24px;
+  }
+}
+
+
+@media only screen and (min-width: 768px) {
+  .welcome-message {
+    font-size: 18px;
+  }
+
+  nav {
+    padding: 0 18px 0;
+  }
+
+  nav a {
+    font-size: 24px;
+  }
+
+  .container-icons img {
+    width: 26px;
+    gap: 24px;
+  }
+
+}
+
+.amount-bag-container {
+  position: relative;
+}
+
+.amount-bag {
+  background-color: indianred;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+}
+
+/* -------------------- Footer ------------------------ */
+
+.container {
+  font-family: var(--font-family-logo-messages);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.068);
+  padding: 16px;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  margin-top: 10px
+}
+
+footer ul {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+li {
+  list-style: none;
+
+}
+
+li img {
+  width: 20px;
+}
+
+footer p {
+  font-size: 20px;
+}
+
+.description {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  text-decoration: none;
+}
+
+.description span {
+  font-size: 18px;
+}
+
+.description a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: bold;
 }

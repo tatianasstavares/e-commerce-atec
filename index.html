@@ -1,13 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./css/shop.css">
+  <script defer type="module" src="./presenter/shop/shop.js"></script>
+  <title>Botique Kirei | Home</title>
+</head>
+
+<body>
+  <header></header>
+
+  <main>
+    <div class="search">
+      <div class="searchbar">
+        <img src="./assets/icons/search-icon.png" alt="">
+        <input class="search-input" type="text">
+      </div>
+      <div>
+        <a href="./pages/cart.html">
+          <button class="add-to-cart-button"><img src="./assets/icons/shopping-cart-icon.png" alt="">
+            Ir para o carrinho
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <div class="products-container">
+
+    </div>
+
+  </main>
+
+  <footer></footer>
+</body>
+
 </html>

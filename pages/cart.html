@@ -5,11 +5,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <script defer type="module" src="../presenter/cart/cart.js"></script>
     <title>Botique Kirei | Cart</title>
 </head>
 
 <body>
+    <header>
+    </header>
+    <main class="flex-container">
+        <div class="cart-container">
+        </div>
+        <div class="payment-info">
+            <section class="container-coupon">
+                <div class="container-coupon-info">
+                    <label for="coupon">Have a coupon?</label>
+                    <form>
+                        <input id="coupon" type="text" placeholder="Coupon Code">
+                        <button id="submit-button" type="submit">Apply</button>
+                    </form>
+                    <div class="coupon-message"></div>
+                </div>
+            </section>
+            <section class="container-payment">
+                <div class="cart-info-value">
+                    <p>Total Price: </p>
+                    <span class="subtotal-price">$0</span>
+                    <p>Discount: </p>
+                    <span class="discount-value">$0</span>
+                    <p>Total: </p>
+                    <span class="total-price">$0</span>
+                </div>
+                <button class="purchase-button">Make Purchase</button>
+                <div class="credit-card-container">
+                    <a href="">
+                        <img class="credit-card" src="../assets/icons/payment-icon.png" alt="">
+                    </a>
+                    <a href="">
+                        <img class="credit-card" src="../assets/icons/payment-paypal-icon.png" alt="">
+                    </a>
+                    <a href="">
+                        <img class="credit-card" src="../assets/icons/payment-mastercard-logo.png" alt="">
+                    </a>
+                    <a href="">
+                        <img class="credit-card" src="../assets/icons/payment-small-mastercard-icon.png" alt="">
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
 
+    <footer>
+    </footer>
 </body>
 
 </html>

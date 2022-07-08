@@ -1,8 +1,20 @@
+import {getAllProductsFromApi} from "./api/getProducts.js"
+import { getStoreFromLocalStorage, manipulateStore, saveInitialProductsToStore, store } from './store/store.js';
+import { loadHeaderAndfooter } from './view/components/loadComponents.js';
 import './style.css'
 
-document.querySelector('#app').innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
 
-
+export async function init() {
+  try {
+    const storeFromLocalStorage = getStoreFromLocalStorage()
+    if (Boolean(storeFromLocalStorage)) {
+      manipulateStore(storeFromLocalStorage)
+    } else {
+      const productsFromApi = await getAllProductsFromApi();
+      saveInitialProductsToStore(productsFromApi)
+    }
+    loadHeaderAndfooter()
+  } catch (error) {
+    console.error(error)
+  }
+}
